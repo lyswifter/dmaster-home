@@ -13,6 +13,7 @@ export default defineComponent({
         return {
             count: ref(1),
             activeIndex: ref('1'),
+            subscribeInput: "abcdef@gmail.com",
         }
     },
     mounted() {
@@ -29,6 +30,9 @@ export default defineComponent({
     methods: {
         handleSelect(key: string, keyPath: string[]) {
             console.log(key, keyPath)
+        },
+        subcribeAction() {
+            alert("subscribe")
         }
     }
 })
@@ -78,7 +82,7 @@ export default defineComponent({
                 <!-- el-main -->
 
                 <el-main class="dm-main">
-                    <!-- Top face -->
+                    <!-- Top view -->
                     <div class="main-content">
                         <div class="main-part-one">
                             <el-row :gutter="10">
@@ -105,7 +109,7 @@ export default defineComponent({
 
                                 <el-col :span="12" style="text-align: right;">
                                     <img class="svg-view" style="width: 592px;height: 526px;"
-                                        src="../assets/img/log-in-girl.svg" alt="">
+                                        src="../assets/img/dynamic.svg" alt="">
                                 </el-col>
                             </el-row>
                         </div>
@@ -180,7 +184,7 @@ export default defineComponent({
                             <el-row :gutter="40" justify="space-around">
                                 <el-col :span="10">
                                     <div class="owned-view">
-                                        <img style="width: 160px;height: 170px;float: left;"
+                                        <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
                                             src="../assets/img/icon_user owned.svg" alt="">
                                         <div class="card-title">User-owned</div>
                                         <div class="card-subtitle">All personal data is stored in user’s device local
@@ -189,7 +193,7 @@ export default defineComponent({
                                 </el-col>
                                 <el-col :span="10">
                                     <div class="others-view">
-                                        <img style="width: 160px;height: 170px;float: left;"
+                                        <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
                                             src="../assets/img/icon_user owned.svg" alt="">
                                         <div class="card-title">Privacy-secured</div>
                                         <div class="card-subtitle">Prove your access rights without revealing your
@@ -201,7 +205,7 @@ export default defineComponent({
                             <el-row :gutter="40" justify="space-around" style="margin-top: 40px;">
                                 <el-col :span="10">
                                     <div class="others-view">
-                                        <img style="width: 160px;height: 170px;float: left;"
+                                        <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
                                             src="../assets/img/icon_user owned.svg" alt="">
                                         <div class="card-title">All scenarios</div>
                                         <div class="card-subtitle">Offer convenience and earning opportunity in all
@@ -210,7 +214,7 @@ export default defineComponent({
                                 </el-col>
                                 <el-col :span="10">
                                     <div class="others-view">
-                                        <img style="width: 160px;height: 170px;float: left;"
+                                        <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
                                             src="../assets/img/icon_user owned.svg" alt="">
                                         <div class="card-title">No data-isolation</div>
                                         <div class="card-subtitle">Safari all web2 and web3 apps and collect personal
@@ -221,8 +225,99 @@ export default defineComponent({
                         </div>
                     </div>
 
+                    <!-- Dmaster Architecture view -->
+                    <div class="architecture-view">
+                        <div class="architecture-content">
+                            <div class="architecture-title">Dmaster Architecture</div>
+
+                            <div class="architecture-img">
+                                <img style="width: 1199px;height: 710px;" src="../assets/img/结构图2@2x.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Roadmap view -->
+                    <div class="roadmap-view">
+                        <div class="roadmap-content">
+                            <img src="../assets/img/roadmap.png" alt="">
+                        </div>
+                    </div>
+
                 </el-main>
-                <el-footer>Footer</el-footer>
+
+                <!-- Footer -->
+
+                <el-footer class="dm-footer">
+                    <div class="footer-container">
+                        <el-row justify="space-between">
+                            <el-col :span="10">
+                                <div class="container-left">
+                                    <div class="footer-title">Get Updates to Your Lubox</div>
+
+                                    <el-row :gutter="5">
+                                        <el-col :span="16">
+                                            <el-input class="subscribe-input" v-model="subscribeInput"
+                                                placeholder="Please input" />
+                                        </el-col>
+                                        <el-col :span="2">
+                                            <el-button class="subscribe-btn" type="primary" @click="subcribeAction">
+                                                Subscribe</el-button>
+                                        </el-col>
+                                    </el-row>
+                                </div>
+                            </el-col>
+
+                            <el-col :span="10">
+                                <div class="container-right">
+                                    <div>
+                                        <div class="follow" style="margin-bottom: 10px;">Follow us</div>
+                                        <el-row :gutter="2" justify="start">
+                                            <el-col :span="2"><img style="width: 40px;height: 40px;border-radius: 20px;"
+                                                    src="../assets/img/推特.svg" alt=""></el-col>
+                                            <el-col :span="2"><img style="width: 40px;height: 40px;border-radius: 20px;"
+                                                    src="../assets/img/github.svg" alt=""></el-col>
+                                            <el-col :span="2"><img style="width: 40px;height: 40px;border-radius: 20px;"
+                                                    src="../assets/img/telegram.svg" alt=""></el-col>
+                                            <el-col :span="2"><img style="width: 40px;height: 40px;border-radius: 20px;"
+                                                    src="../assets/img/discord.svg" alt=""></el-col>
+                                            <el-col :span="2"><img style="width: 40px;height: 40px;border-radius: 20px;"
+                                                    src="../assets/img/youtube.svg" alt=""></el-col>
+                                        </el-row>
+
+                                        <div class="follow" style="margin-top: 40px;margin-bottom: 10px;">Contact us</div>
+                                        <el-row>
+                                                <img style="width: 40px;height: 40px;border-radius: 20px;" src="../assets/img/邮箱.svg" alt="">
+                                                <span style="line-height: 40px; margin-left: 5px;">contact@dmaster.com</span>
+                                        </el-row>
+                                    </div>
+                                </div>
+                            </el-col>
+                        </el-row>
+
+                        <div class="footer-line"></div>
+
+                        <el-row justify="space-between">
+                            <el-col :span="2">
+                                <div class="lineh-54">Dmaster</div>
+                            </el-col>
+                            <el-col :span="10">
+                                <div class="lineh-54">
+                                    Copyright © 2022 Dmaster All rights reserved.
+                                </div>
+                            </el-col>
+                            <el-col :span="2">
+                                <div class="lineh-54">Privacy Policy</div>
+                            </el-col>
+                            <el-col :span="2">
+                                <div class="lineh-54">Terms of Service</div>
+                            </el-col>
+                            <el-col :span="4">
+                                <img class="backtotop-img" src="../assets/img/backtotop.svg" alt="">
+                                <a class="backtotop-a" href="">Back to top</a>
+                            </el-col>
+                        </el-row>
+                    </div>
+                </el-footer>
             </el-container>
         </div>
     </div>
@@ -489,9 +584,9 @@ export default defineComponent({
 }
 
 .owned-view {
-    width: 600px;
-    padding: 15px;
-    height: 230px;
+    width: 570px;
+    padding: 30px 15px;
+    height: 170px;
     background: #FFFFFF;
     border-radius: 20px;
     border: 1px solid #FFFFFF;
@@ -499,9 +594,9 @@ export default defineComponent({
 }
 
 .others-view {
-    width: 600px;
-    padding: 15px;
-    height: 230px;
+    width: 570px;
+    padding: 30px 15px;
+    height: 170px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     border: 1px solid #FFFFFF;
@@ -526,5 +621,115 @@ export default defineComponent({
     font-weight: 300;
     color: rgba(32, 40, 66, 0.8);
     line-height: 27px;
+}
+</style>
+
+<!-- Dmaster Architecture -->
+
+<style scoped>
+.architecture-view {
+    height: 1111px;
+    background: #FFFFFF;
+}
+
+.architecture-content {
+    width: 1440px;
+    margin: 0 auto;
+    text-align: start;
+}
+
+.architecture-title {
+    height: 101px;
+    font-size: 72px;
+    font-weight: bold;
+    color: #202842;
+    line-height: 108px;
+}
+
+.architecture-img {
+    margin: 50px auto;
+    text-align: center;
+}
+</style>
+
+<!-- Roadmap -->
+
+<style scoped>
+.roadmap-content {
+    margin: 0 auto;
+    width: 1440px;
+}
+
+.roadmap-content img {
+    width: 100%;
+}
+</style>
+
+<!-- Footer  -->
+
+<style scoped>
+.dm-footer {
+    height: auto;
+}
+
+.footer-container {
+    width: 1440px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+.container-left {
+    text-align: start;
+}
+
+.footer-title {
+    margin-bottom: 5px;
+    height: 51px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #222840;
+    line-height: 55px;
+}
+
+.subscribe-input {
+    width: 385px;
+    height: 48px;
+    background: rgba(32, 40, 66, 0.1);
+    border-radius: 4px;
+}
+
+.subscribe-btn {
+    width: 121px;
+    height: 48px;
+    background: #1672F0;
+    border-radius: 8px;
+}
+
+.container-right {
+    text-align: left;
+}
+
+.footer-line {
+    margin-top: 42px;
+    width: 1440px;
+    height: 1px;
+    opacity: 0.2;
+    border-top: 1px solid #222840;
+}
+
+.lineh-54 {
+    line-height: 54px;
+}
+
+.backtotop-img {
+    width: 24px;
+    height: 25px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.backtotop-a {
+    color: #222840;
+    line-height: 54px;
 }
 </style>
