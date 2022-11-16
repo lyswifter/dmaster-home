@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="32px" viewBox="0 0 38 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>littleqube</title>
+    <defs>
+        <linearGradient x1="92.8937721%" y1="18.081033%" x2="-3.63016643e-14%" y2="85.4570637%" id="linearGradient-1">
+            <stop stop-color="#1672F0" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#1672F0" offset="51.6335227%"></stop>
+            <stop stop-color="#1672F0" offset="100%"></stop>
+        </linearGradient>
+        <path d="M12.018209,0.891077824 L4.69903933,3.43850962 C1.88550584,4.41775795 1.41152516e-15,7.07045251 0,10.0495292 L0,27 C1.56449537e-15,29.7614237 2.23857625,32 5,32 L24.9974885,32 C26.5250407,32 28.010663,31.5003227 29.2277276,30.5771926 L35.2302391,26.0243538 C36.9750849,24.7009075 38,22.6371377 38,20.4471612 L38,5.01714192 C37.9963392,2.25714715 35.7599927,0.0191632536 33.0000013,0.0134824895 L17.2892578,0.0019840263 C15.4948158,0.000670700418 13.7129368,0.301229006 12.018209,0.891077824 Z" id="path-2"></path>
+        <filter x="-126.0%" y="-124.9%" width="352.1%" height="349.7%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="7" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="-5.44571881e-14%" id="linearGradient-5">
+            <stop stop-color="#1571F0" offset="0%"></stop>
+            <stop stop-color="#3087FF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-2.51086646e-16%" y1="71.8721198%" x2="100%" y2="71.8721198%" id="linearGradient-6">
+            <stop stop-color="#1672F0" offset="0%"></stop>
+            <stop stop-color="#1672F0" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="官网1440" transform="translate(-697.000000, -890.000000)">
+            <g id="littleqube" transform="translate(697.000000, 890.000000)">
+                <mask id="mask-3" fill="white">
+                    <use xlink:href="#path-2"></use>
+                </mask>
+                <use id="路径-2" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                <path d="M3,6 L22,6 C24.7614237,6 27,8.23857625 27,11 L27,30 L27,30 L3,30 L3,6 Z" id="矩形" fill="#1672F0" fill-rule="nonzero" mask="url(#mask-3)"></path>
+                <rect id="矩形" fill="#60A4FF" fill-rule="nonzero" filter="url(#filter-4)" mask="url(#mask-3)" x="5.66981096" y="10.8204599" width="16.6616118" height="16.8179878" rx="7.85202864"></rect>
+                <polygon id="矩形备份-3" fill="url(#linearGradient-5)" fill-rule="nonzero" opacity="0.600000024" mask="url(#mask-3)" points="15.5275917 1.39658744 37 1.5 25.5 7.5 22.5 6 3 6"></polygon>
+                <polygon id="矩形备份-4" fill="url(#linearGradient-6)" fill-rule="nonzero" opacity="0.600000024" mask="url(#mask-3)" points="37 1.5 37 22.5 27 30 27 10.5 25.5 7.5"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
