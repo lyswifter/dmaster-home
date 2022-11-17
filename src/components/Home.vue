@@ -11,8 +11,6 @@ export default defineComponent({
     },
     data() {
         return {
-            count: ref(1),
-            activeIndex: ref('1'),
             subscribeInput: "dmaster@gmail.com",
             issueUrl: "https://dmaster.com/issue",
             isScroll: false,
@@ -43,10 +41,6 @@ export default defineComponent({
     methods: {
         reloadPage() {
             location.reload()
-            // window.scrollTo({
-            //     top: 0,
-            //     behavior: 'smooth'
-            // })
         },
         handleSelect(key: string, keyPath: string[]) {
             console.log(key, keyPath)
