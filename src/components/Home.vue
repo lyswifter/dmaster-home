@@ -714,7 +714,7 @@ export default defineComponent({
 <style scoped>
 .roadmap-content {
     margin: 0 auto;
-    width: 1440px;
+    width: 1360px;
 }
 
 .roadmap-content img {
