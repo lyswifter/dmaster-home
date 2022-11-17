@@ -511,7 +511,6 @@ export default defineComponent({
 
 <style scoped>
 .revolution-view {
-    /* height: 785px; */
     padding-bottom: 80px;
     padding-top: 80px;
     background: linear-gradient(180deg, rgba(22, 114, 240, 0.2) 0%, rgba(22, 114, 240, 0.07) 100%);
@@ -622,7 +621,7 @@ export default defineComponent({
     background: linear-gradient(180deg, rgba(22, 114, 240, 0.07) 0%, rgba(22, 114, 240, 0) 100%);
     background-image: url(../assets/img/featuresbg.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
 .feature-content {
