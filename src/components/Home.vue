@@ -41,6 +41,13 @@ export default defineComponent({
         })
     },
     methods: {
+        reloadPage() {
+            location.reload()
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        },
         handleSelect(key: string, keyPath: string[]) {
             console.log(key, keyPath)
         },
@@ -67,9 +74,11 @@ export default defineComponent({
             <el-header class="dm-header" :class="{ headerscroll: isScroll }" id="topAnchor">
                 <el-row class="dm-row">
                     <el-col :span="3">
-                        <div class="logoview">
+                        <a href="javascript:void(0)" @click="reloadPage">
+                            <div class="logoview">
                             <img src="../assets/img/logo_Dmaster.svg" alt="">
                         </div>
+                        </a>
                     </el-col>
 
                     <el-col :span="18">
@@ -610,6 +619,9 @@ export default defineComponent({
 .feature-view {
     height: 820px;
     background: linear-gradient(180deg, rgba(22, 114, 240, 0.07) 0%, rgba(22, 114, 240, 0) 100%);
+    background-image: url(../assets/img/featuresbg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .feature-content {
