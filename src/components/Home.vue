@@ -14,7 +14,7 @@ export default defineComponent({
             count: ref(1),
             activeIndex: ref('1'),
             subscribeInput: "dmaster@gmail.com",
-            issueUrl: "https://did.valuechain.group",
+            issueUrl: "https://dmaster.com/issue",
             isScroll: false,
         }
     },
@@ -28,25 +28,25 @@ export default defineComponent({
         };
         new Typed(".typing", options);
 
-        let that = this
-        window.addEventListener('scroll', function () {
-            // var header = document.querySelector("#topAnchor");
-            // header?.classList.toggle("headerscroll", window.scrollY > 0)
+        // let that = this
+        // window.addEventListener('scroll', function () {
+        //     // var header = document.querySelector("#topAnchor");
+        //     // header?.classList.toggle("headerscroll", window.scrollY > 0)
 
-            if (window.scrollY > 0) {
-                that.isScroll = true
-            } else {
-                that.isScroll = false
-            }
-        })
+        //     if (window.scrollY > 0) {
+        //         that.isScroll = true
+        //     } else {
+        //         that.isScroll = false
+        //     }
+        // })
     },
     methods: {
         reloadPage() {
             location.reload()
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            })
+            // window.scrollTo({
+            //     top: 0,
+            //     behavior: 'smooth'
+            // })
         },
         handleSelect(key: string, keyPath: string[]) {
             console.log(key, keyPath)
@@ -71,7 +71,7 @@ export default defineComponent({
 
             <!-- el-header -->
 
-            <el-header class="dm-header" :class="{ headerscroll: isScroll }" id="topAnchor">
+            <el-header class="dm-header topAnchor" :class="{ headerscroll: isScroll }">
                 <el-row class="dm-row">
                     <el-col :span="3">
                         <a href="javascript:void(0)" @click="reloadPage">
@@ -376,15 +376,17 @@ export default defineComponent({
     vertical-align: middle;
 }
 
-#topAnchor {
+.topAnchor {
     position: sticky;
     top: 0;
     z-index: 99;
     background-color: rgb(32, 40, 66, 1);
+    /* backdrop-filter: blur(10); */
 }
 
 .headerscroll {
-    opacity: 0.8;
+    /* opacity: 0.8; */
+    /* background-color: rgb(32, 40, 66, 0.8); */
 }
 
 .dm-row {
@@ -515,7 +517,8 @@ export default defineComponent({
 .revolution-view {
     padding-bottom: 80px;
     padding-top: 80px;
-    background: linear-gradient(180deg, rgba(22, 114, 240, 0.2) 0%, rgba(22, 114, 240, 0.07) 100%);
+    background: linear-gradient(180deg, #D1E3FC 0%, #EEF5FE 100%);
+    
 }
 
 .revolution-content {
@@ -620,7 +623,7 @@ export default defineComponent({
 <style scoped>
 .feature-view {
     height: 820px;
-    background: linear-gradient(180deg, rgba(22, 114, 240, 0.07) 0%, rgba(22, 114, 240, 0) 100%);
+    background: linear-gradient(180deg, #EFF5FE 0%, #FFFFFF 100%);;
     background-image: url(../assets/img/featuresbg.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -716,6 +719,7 @@ export default defineComponent({
 .roadmap-content {
     margin: 0 auto;
     width: 1360px;
+    background-color: white;
 }
 
 .roadmap-content img {
@@ -728,6 +732,7 @@ export default defineComponent({
 <style scoped>
 .dm-footer {
     height: auto;
+    background-color: white;
 }
 
 .footer-container {
