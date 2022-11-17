@@ -686,6 +686,7 @@ export default defineComponent({
 .architecture-view {
     height: 1000px;
     background: #FFFFFF;
+    padding-top: 100px;
 }
 
 .architecture-content {
