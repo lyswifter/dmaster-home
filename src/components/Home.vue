@@ -517,7 +517,7 @@ export default defineComponent({
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    background-color: rgba(22, 114, 240, 0.2);
+    background-color: #D1E3FC;
     background-position: center;
 }
 
@@ -639,10 +639,11 @@ export default defineComponent({
 <style scoped>
 .feature-view {
     height: 820px;
-    background: linear-gradient(180deg, #EFF5FE 0%, #FFFFFF 100%);;
     background-image: url(../assets/img/featuresbg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: linear-gradient(180deg, #EFF5FE 0%, #FFFFFF 100%);
+    /* background: linear-gradient(180deg, #EFF5FE 0%, #FFFFFF 100%); */
 }
 
 .feature-content {
@@ -732,6 +733,10 @@ export default defineComponent({
 <!-- Roadmap -->
 
 <style scoped>
+.roadmap-view {
+    background-color: white;
+}
+
 .roadmap-content {
     margin: 0 auto;
     width: 1360px;
