@@ -97,7 +97,7 @@ export default defineComponent({
                     </el-col>
 
                     <el-col :span="3">
-                        <el-button class="menu-btn" type="primary" round><a :href="issueUrl">Dmaster APP</a></el-button>
+                        <a class="menu-btn" :href="issueUrl">Dmaster APP</a>
                     </el-col>
                 </el-row>
             </el-header>
@@ -122,13 +122,14 @@ export default defineComponent({
 
                                 <el-row justify="start" style="margin-top: 50px;">
                                     <el-col :span="7" :offset="1">
-                                        <el-button class="roadmap-btn" type="text"><a href="javascript:void(0)"
-                                                @click="scrollIntoView('#roadmapAnchor')">See the Roadmap</a>
-                                        </el-button>
+                                        <a class="roadmap-btn" href="javascript:void(0)" @click="scrollIntoView('#roadmapAnchor')">See the Roadmap</a>
+                                        <!-- <el-button class="roadmap-btn" type="text">
+                                        </el-button> -->
                                     </el-col>
                                     <el-col :span="7">
-                                        <el-button class="start-btn" type="primary"><a :href="issueUrl">Get Start</a>
-                                        </el-button>
+                                        <a class="start-btn" :href="issueUrl">Get Start</a>
+                                        <!-- <el-button class="start-btn" type="primary">
+                                        </el-button> -->
                                     </el-col>
                                 </el-row>
                             </el-col>
@@ -402,10 +403,20 @@ export default defineComponent({
 }
 
 .menu-btn {
-    width: 110px;
+    margin-top: 11%;
+    display: block;
+    text-align: center;
+    width: 130px;
     height: 32px;
     background: #3670E8;
     border-radius: 20px;
+    line-height: 32px;
+    font-size: 16px;
+}
+
+.menu-btn:hover {
+    color: white;
+    opacity: 0.7;
 }
 </style>
 
@@ -474,17 +485,28 @@ export default defineComponent({
 }
 
 .roadmap-btn {
+    display: block;
+    line-height: 48px;
+    text-align: center;
     width: 185px;
-    height: 50px;
+    height: 48px;
     border-radius: 10px;
-    border: 1px solid #3087FF;
+    border: 0.5px solid #3087FF;
 }
 
 .start-btn {
+    display: block;
+    line-height: 50px;
+    text-align: center;
     width: 185px;
     height: 50px;
     background: #1672F0;
     border-radius: 10px;
+}
+
+.start-btn:hover {
+    color: white;
+    opacity: 0.7;
 }
 
 .botton-banner {
