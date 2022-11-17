@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { ElButton, ElMenu } from 'element-plus'
+import { ElButton } from 'element-plus'
 
 import Typed from 'typed.js';
 
@@ -13,23 +13,41 @@ export default defineComponent({
         return {
             count: ref(1),
             activeIndex: ref('1'),
-            subscribeInput: "abcdef@gmail.com",
+            subscribeInput: "dmaster@gmail.com",
+            issueUrl: "https://did.valuechain.group",
+            isScroll: false,
         }
     },
     mounted() {
         var options = {
-            strings: ['ecentralized', 'ecentralized'],
+            strings: ['ecentralized', 'ata', 'master'],
             typeSpeed: 100,
             smartBackspace: true,
             loop: true,
             showCursor: false,
         };
-
         new Typed(".typing", options);
+
+        let that = this
+        window.addEventListener('scroll', function () {
+            // var header = document.querySelector("#topAnchor");
+            // header?.classList.toggle("headerscroll", window.scrollY > 0)
+
+            if (window.scrollY > 0) {
+                that.isScroll = true
+            } else {
+                that.isScroll = false
+            }
+        })
     },
     methods: {
         handleSelect(key: string, keyPath: string[]) {
             console.log(key, keyPath)
+        },
+        scrollIntoView(aim) {
+            document.querySelector(aim)?.scrollIntoView({
+                behavior: "smooth"
+            })
         },
         subcribeAction() {
             alert("subscribe")
@@ -40,286 +58,293 @@ export default defineComponent({
 
 <template>
     <div id="container">
-        <div class="common-layout">
-            <el-container>
-                <!-- el-header -->
+        <!-- <div class="common-layout"> -->
+        <el-container>
+            <div id="topRowAnchor"></div>
 
-                <el-header class="dm-header">
-                    <el-row class="dm-row">
-                        <el-col :span="3">
-                            <div class="logoview">
-                                <img src="../assets/img/logo_Dmaster.svg" alt="">
+            <!-- el-header -->
+
+            <el-header class="dm-header" :class="{ headerscroll: isScroll }" id="topAnchor">
+                <el-row class="dm-row">
+                    <el-col :span="3">
+                        <div class="logoview">
+                            <img src="../assets/img/logo_Dmaster.svg" alt="">
+                        </div>
+                    </el-col>
+
+                    <el-col :span="18">
+                        <el-row :gutter="40" justify="center">
+                            <el-col :span="2">
+                                <a class="menu-title" href="javascript:void(0)"
+                                    @click="scrollIntoView('#highlightAnchor')">Highlights</a>
+                            </el-col>
+                            <el-col :span="2">
+                                <a class="menu-title" href="javascript:void(0)"
+                                    @click="scrollIntoView('#featuresAnchor')">Features</a>
+                            </el-col>
+                            <el-col :span="2">
+                                <a class="menu-title" href="javascript:void(0)"
+                                    @click="scrollIntoView('#architectureAnchor')">Technology</a>
+                            </el-col>
+                            <el-col :span="2">
+                                <a class="menu-title" href="javascript:void(0)"
+                                    @click="scrollIntoView('#roadmapAnchor')">Roadmap</a>
+                            </el-col>
+                        </el-row>
+                    </el-col>
+
+                    <el-col :span="3">
+                        <el-button class="menu-btn" type="primary" round><a :href="issueUrl">Dmaster APP</a></el-button>
+                    </el-col>
+                </el-row>
+            </el-header>
+
+            <!-- el-main -->
+
+            <el-main class="dm-main">
+                <!-- Top view -->
+                <div class="main-content">
+                    <div class="main-part-one">
+                        <el-row :gutter="10">
+                            <el-col :span="13">
+                                <div class="first-line">MASTER</div>
+                                <div class="second-line">YOUR OWN DATA</div>
+
+                                <div class="typing"></div>
+
+                                <h4 class="illustrate-line">Dmaster Network is a Decentralized Personal Profile Data Solution
+                                    powered by
+                                    W3C DID standard and
+                                    Blockchain.</h4>
+
+                                <el-row justify="start" style="margin-top: 50px;">
+                                    <el-col :span="7" :offset="1">
+                                        <el-button class="roadmap-btn" type="text"><a href="javascript:void(0)"
+                                                @click="scrollIntoView('#roadmapAnchor')">See the Roadmap</a>
+                                        </el-button>
+                                    </el-col>
+                                    <el-col :span="7">
+                                        <el-button class="start-btn" type="primary"><a :href="issueUrl">Get Start</a>
+                                        </el-button>
+                                    </el-col>
+                                </el-row>
+                            </el-col>
+
+                            <el-col :span="11" style="text-align: right;">
+                                <!-- <object class="svg-view" data="../assets/img/log-in-girl.svg" type="image/svg+xml" height="526px" width="592px"> -->
+                                <img class="svg-view" style="width: 592px;height: 526px;"
+                                    src="../assets/img/dynamic.svg" alt="">
+                                <!-- </object> -->
+                            </el-col>
+                        </el-row>
+                    </div>
+                </div>
+
+                <!-- Banner view -->
+                <div class="botton-banner" id="highlightAnchor">
+                    <img style="width: 38px;height: 32px;" src="../assets/img/littleqube.svg" alt="">
+                </div>
+
+                <!-- Revolution-view -->
+                <div class="revolution-view">
+                    <div class="revolution-content">
+                        <div class="re-title">The real Web3 revolution!</div>
+                        <div class="re-subtitle">The ultimate all-in-one data sovereignty solution across Web2 and
+                            Web3 in all time and in all scenarios. </div>
+
+                        <el-row justify="space-around">
+                            <el-col :span="10">
+                                <div class="web2-description">
+                                    <div class="web2-title">Web2</div>
+                                    <div class="web2-subtitle">Nowadays, your data is in cloud service of Web2
+                                        giants and you never own.
+                                    </div>
+                                </div>
+                            </el-col>
+
+                            <div class="description-one"></div>
+
+                            <el-col :span="10">
+                                <div class="web3-description">
+                                    <div class="web3-title">Web3</div>
+                                    <div class="web3-subtitle">With Dmaster, your data is in your local device or
+                                        being encryped on-chain
+                                        without third-party unauthentic access.</div>
+                                </div>
+                            </el-col>
+                        </el-row>
+
+                        <h2>vs</h2>
+
+                        <el-row justify="space-around">
+                            <el-col :span="10">
+                                <img style="width: 582px;height: 203px;border: 1px dashed lightgrey;"
+                                    src="../assets/img/web2.svg" alt="">
+                            </el-col>
+
+                            <div class="description-two"></div>
+
+                            <el-col :span="10">
+                                <img style="width: 582px;height: 203px;border: 1px dashed lightgrey;"
+                                    src="../assets/img/web3.svg" alt="">
+                            </el-col>
+                        </el-row>
+                    </div>
+                </div>
+
+                <!-- Features view -->
+                <div class="feature-view" id="featuresAnchor">
+                    <div class="feature-content">
+                        <img style="width: 38px;height: 32px;margin-top: 80px;" src="../assets/img/littleqube.svg"
+                            alt="">
+                        <div class="feature-title">Features</div>
+
+                        <el-row :gutter="40" justify="space-around">
+                            <el-col :span="10">
+                                <div class="owned-view">
+                                    <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
+                                        src="../assets/img/icon_user_owned.svg" alt="">
+                                    <div class="card-title">User-owned</div>
+                                    <div class="card-subtitle">All personal data is stored in user’s device local
+                                        storage or encrypedly on Dmaster blockchain.</div>
+                                </div>
+                            </el-col>
+                            <el-col :span="10">
+                                <div class="others-view">
+                                    <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
+                                        src="../assets/img/icon_privacy.svg" alt="">
+                                    <div class="card-title">Privacy-secured</div>
+                                    <div class="card-subtitle">Prove your access rights without revealing your
+                                        private information built-in via zk-VM.</div>
+                                </div>
+                            </el-col>
+                        </el-row>
+
+                        <el-row :gutter="40" justify="space-around" style="margin-top: 40px;">
+                            <el-col :span="10">
+                                <div class="others-view">
+                                    <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
+                                        src="../assets/img/icon_scenarios.svg" alt="">
+                                    <div class="card-title">All scenarios</div>
+                                    <div class="card-subtitle">Offer simplest user experience and earning opportunity in all
+                                        online and offline scenarios.</div>
+                                </div>
+                            </el-col>
+                            <el-col :span="10">
+                                <div class="others-view">
+                                    <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
+                                        src="../assets/img/icon_data_isolation.svg" alt="">
+                                    <div class="card-title">No data-isolation</div>
+                                    <div class="card-subtitle">Safari all web2 and web3 apps and collect personal
+                                        tags and preference in just one ID.</div>
+                                </div>
+                            </el-col>
+                        </el-row>
+                    </div>
+                </div>
+
+                <!-- Dmaster Architecture view -->
+                <div class="architecture-view" id="architectureAnchor">
+                    <div class="architecture-content">
+                        <!-- <div class="architecture-title">Dmaster Architecture</div> -->
+
+                        <span class="architecture-title">Dmaster Architecture</span>
+                        <img style="width: 38px;height: 32px;margin-left: 4px;" src="../assets/img/littleqube.svg" alt="">
+
+                        <div class="architecture-img">
+                            <img style="width: 1199px;height: 710px;" src="../assets/img/结构图2@2x.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Roadmap view -->
+                <div class="roadmap-view" id="roadmapAnchor">
+                    <div class="roadmap-content">
+                        <img src="../assets/img/road_map.png" alt="">
+                    </div>
+                </div>
+
+            </el-main>
+
+            <!-- Footer -->
+
+            <el-footer class="dm-footer">
+                <div class="footer-container">
+                    <el-row justify="space-between">
+                        <el-col :span="10">
+                            <div class="container-left">
+                                <div class="footer-title">Get Updates to Your Inbox</div>
+
+                                <el-row :gutter="1">
+                                    <el-col :span="16">
+                                        <el-input class="subscribe-input" v-model="subscribeInput"
+                                            placeholder="Please input" />
+                                    </el-col>
+                                    <el-col :span="2">
+                                        <el-button class="subscribe-btn" type="primary" @click="subcribeAction">
+                                            Subscribe</el-button>
+                                    </el-col>
+                                </el-row>
                             </div>
                         </el-col>
 
-                        <el-col :span="18">
-                            <el-row :gutter="40" justify="center">
-                                <el-col :span="2">
-                                    <a class="menu-title" href="">Highlight</a>
-                                </el-col>
+                        <el-col :span="8">
+                            <div class="container-right">
+                                <div>
+                                    <div class="follow" style="margin-bottom: 10px;font-size: 24px;color: #222840;">Follow us</div>
+                                    <el-row :gutter="2" justify="start">
+                                        <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
+                                                src="../assets/img/推特.svg" alt=""></el-col>
+                                        <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
+                                                src="../assets/img/github.svg" alt=""></el-col>
+                                        <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
+                                                src="../assets/img/telegram.svg" alt=""></el-col>
+                                        <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
+                                                src="../assets/img/discord.svg" alt=""></el-col>
+                                        <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
+                                                src="../assets/img/youtube.svg" alt=""></el-col>
+                                    </el-row>
 
-                                <el-col :span="2">
-                                    <a class="menu-title" href="">Features</a>
-                                </el-col>
-
-                                <el-col :span="2">
-                                    <a class="menu-title" href="">Architecture</a>
-                                </el-col>
-
-                                <el-col :span="2">
-                                    <a class="menu-title" href="">Road map</a>
-                                </el-col>
-                            </el-row>
-                        </el-col>
-
-
-                        <el-col :span="3">
-                            <el-button class="menu-btn" type="primary" round>Dmaster</el-button>
+                                    <div class="follow" style="margin-top: 40px;margin-bottom: 10px;font-size: 24px;color: #222840;">Contact us</div>
+                                    <el-row>
+                                        <img style="width: 40px;height: 40px;border-radius: 20px;"
+                                            src="../assets/img/邮箱.svg" alt="">
+                                        <span style="line-height: 40px; margin-left: 5px;">contact@dmaster.com</span>
+                                    </el-row>
+                                </div>
+                            </div>
                         </el-col>
                     </el-row>
-                </el-header>
 
-                <!-- el-main -->
+                    <div class="footer-line"></div>
 
-                <el-main class="dm-main">
-                    <!-- Top view -->
-                    <div class="main-content">
-                        <div class="main-part-one">
-                            <el-row :gutter="10">
-                                <el-col :span="12">
-                                    <div class="first-line">MASTER</div>
-                                    <div class="second-line">Your own DATA</div>
-
-                                    <div class="typing"></div>
-
-                                    <h4 class="illustrate-line">Dmaster is a Decentralized Personal Data Solution
-                                        proceed by
-                                        W3C DID standard and
-                                        Blockchain.</h4>
-
-                                    <el-row justify="center" :gutter="10">
-                                        <el-col :span="10">
-                                            <el-button class="roadmap-btn" type="text">See the Roadmap</el-button>
-                                        </el-col>
-                                        <el-col :span="14">
-                                            <el-button class="start-btn" type="primary">Get Start</el-button>
-                                        </el-col>
-                                    </el-row>
-                                </el-col>
-
-                                <el-col :span="12" style="text-align: right;">
-                                    <img class="svg-view" style="width: 592px;height: 526px;"
-                                        src="../assets/img/dynamic.svg" alt="">
-                                </el-col>
-                            </el-row>
-                        </div>
-                    </div>
-
-                    <!-- Banner view -->
-                    <div class="botton-banner">
-                        <img style="width: 38px;height: 32px;" src="../assets/img/littleqube.svg" alt="">
-                    </div>
-
-                    <!-- Revolution-view -->
-                    <div class="revolution-view">
-                        <div class="revolution-content">
-                            <div class="re-title">The real Web3 revolution!</div>
-                            <div class="re-subtitle">The ultimate all-in-one data sovereignty solution across Web2 and
-                                Web3 in all time and in allscenarios. </div>
-
-                            <el-row justify="space-around">
-                                <el-col :span="10">
-                                    <div class="web2-description">
-                                        <div class="web2-title">Web2</div>
-                                        <div class="web2-subtitle">Nowadays, your data is in cluod service of Web2
-                                            giants and you never own.
-                                        </div>
-                                    </div>
-                                </el-col>
-
-                                <!-- <el-col :span="2">
-                                    <div class="description-mid">
-
-                                    </div>
-                                </el-col> -->
-
-                                <el-col :span="10">
-                                    <div class="web3-description">
-                                        <div class="web3-title">Web3</div>
-                                        <div class="web3-subtitle">With Dmaster, your data is in your local device or
-                                            being everyped on-chain
-                                            without third-party unauthentic access.</div>
-                                    </div>
-                                </el-col>
-                            </el-row>
-
-                            <h5>vs</h5>
-
-                            <el-row justify="space-around">
-                                <el-col :span="10">
-                                    <img style="width: 582px;height: 203px;border: 1px dashed lightgrey;"
-                                        src="../assets/img/web2.svg" alt="">
-                                </el-col>
-
-                                <!-- <el-col :span="2">
-                                    <div>
-                                    </div>
-                                </el-col> -->
-
-                                <el-col :span="10">
-                                    <img style="width: 582px;height: 203px;border: 1px dashed lightgrey;"
-                                        src="../assets/img/web3.svg" alt="">
-                                </el-col>
-                            </el-row>
-                        </div>
-                    </div>
-
-                    <!-- Features view -->
-                    <div class="feature-view">
-                        <div class="feature-content">
-                            <img style="width: 38px;height: 32px;margin-top: 80px;" src="../assets/img/littleqube.svg"
-                                alt="">
-                            <div class="feature-title">Features</div>
-
-                            <el-row :gutter="40" justify="space-around">
-                                <el-col :span="10">
-                                    <div class="owned-view">
-                                        <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
-                                            src="../assets/img/icon_user owned.svg" alt="">
-                                        <div class="card-title">User-owned</div>
-                                        <div class="card-subtitle">All personal data is stored in user’s device local
-                                            storage or Dmaster blockchain.</div>
-                                    </div>
-                                </el-col>
-                                <el-col :span="10">
-                                    <div class="others-view">
-                                        <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
-                                            src="../assets/img/icon_user owned.svg" alt="">
-                                        <div class="card-title">Privacy-secured</div>
-                                        <div class="card-subtitle">Prove your access rights without revealing your
-                                            private information via zk-VM.</div>
-                                    </div>
-                                </el-col>
-                            </el-row>
-
-                            <el-row :gutter="40" justify="space-around" style="margin-top: 40px;">
-                                <el-col :span="10">
-                                    <div class="others-view">
-                                        <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
-                                            src="../assets/img/icon_user owned.svg" alt="">
-                                        <div class="card-title">All scenarios</div>
-                                        <div class="card-subtitle">Offer convenience and earning opportunity in all
-                                            online and offline scenarios.</div>
-                                    </div>
-                                </el-col>
-                                <el-col :span="10">
-                                    <div class="others-view">
-                                        <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
-                                            src="../assets/img/icon_user owned.svg" alt="">
-                                        <div class="card-title">No data-isolation</div>
-                                        <div class="card-subtitle">Safari all web2 and web3 apps and collect personal
-                                            tags and preference in just one ID.</div>
-                                    </div>
-                                </el-col>
-                            </el-row>
-                        </div>
-                    </div>
-
-                    <!-- Dmaster Architecture view -->
-                    <div class="architecture-view">
-                        <div class="architecture-content">
-                            <div class="architecture-title">Dmaster Architecture</div>
-
-                            <div class="architecture-img">
-                                <img style="width: 1199px;height: 710px;" src="../assets/img/结构图2@2x.png" alt="">
+                    <el-row justify="space-between">
+                        <el-col :span="2">
+                            <div class="lineh-54 logo-dark">
+                                <img src="../assets/img/logo_Dmaster_dark.svg" alt="">
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Roadmap view -->
-                    <div class="roadmap-view">
-                        <div class="roadmap-content">
-                            <img src="../assets/img/roadmap.png" alt="">
-                        </div>
-                    </div>
-
-                </el-main>
-
-                <!-- Footer -->
-
-                <el-footer class="dm-footer">
-                    <div class="footer-container">
-                        <el-row justify="space-between">
-                            <el-col :span="10">
-                                <div class="container-left">
-                                    <div class="footer-title">Get Updates to Your Lubox</div>
-
-                                    <el-row :gutter="5">
-                                        <el-col :span="16">
-                                            <el-input class="subscribe-input" v-model="subscribeInput"
-                                                placeholder="Please input" />
-                                        </el-col>
-                                        <el-col :span="2">
-                                            <el-button class="subscribe-btn" type="primary" @click="subcribeAction">
-                                                Subscribe</el-button>
-                                        </el-col>
-                                    </el-row>
-                                </div>
-                            </el-col>
-
-                            <el-col :span="10">
-                                <div class="container-right">
-                                    <div>
-                                        <div class="follow" style="margin-bottom: 10px;">Follow us</div>
-                                        <el-row :gutter="2" justify="start">
-                                            <el-col :span="2"><img style="width: 40px;height: 40px;border-radius: 20px;"
-                                                    src="../assets/img/推特.svg" alt=""></el-col>
-                                            <el-col :span="2"><img style="width: 40px;height: 40px;border-radius: 20px;"
-                                                    src="../assets/img/github.svg" alt=""></el-col>
-                                            <el-col :span="2"><img style="width: 40px;height: 40px;border-radius: 20px;"
-                                                    src="../assets/img/telegram.svg" alt=""></el-col>
-                                            <el-col :span="2"><img style="width: 40px;height: 40px;border-radius: 20px;"
-                                                    src="../assets/img/discord.svg" alt=""></el-col>
-                                            <el-col :span="2"><img style="width: 40px;height: 40px;border-radius: 20px;"
-                                                    src="../assets/img/youtube.svg" alt=""></el-col>
-                                        </el-row>
-
-                                        <div class="follow" style="margin-top: 40px;margin-bottom: 10px;">Contact us</div>
-                                        <el-row>
-                                                <img style="width: 40px;height: 40px;border-radius: 20px;" src="../assets/img/邮箱.svg" alt="">
-                                                <span style="line-height: 40px; margin-left: 5px;">contact@dmaster.com</span>
-                                        </el-row>
-                                    </div>
-                                </div>
-                            </el-col>
-                        </el-row>
-
-                        <div class="footer-line"></div>
-
-                        <el-row justify="space-between">
-                            <el-col :span="2">
-                                <div class="lineh-54">Dmaster</div>
-                            </el-col>
-                            <el-col :span="10">
-                                <div class="lineh-54">
-                                    Copyright © 2022 Dmaster All rights reserved.
-                                </div>
-                            </el-col>
-                            <el-col :span="2">
-                                <div class="lineh-54">Privacy Policy</div>
-                            </el-col>
-                            <el-col :span="2">
-                                <div class="lineh-54">Terms of Service</div>
-                            </el-col>
-                            <el-col :span="4">
-                                <img class="backtotop-img" src="../assets/img/backtotop.svg" alt="">
-                                <a class="backtotop-a" href="">Back to top</a>
-                            </el-col>
-                        </el-row>
-                    </div>
-                </el-footer>
-            </el-container>
-        </div>
+                        </el-col>
+                        <el-col :span="10">
+                            <div class="lineh-54">
+                                Copyright © 2022 Dmaster All rights reserved.
+                            </div>
+                        </el-col>
+                        <el-col :span="2">
+                            <div class="lineh-54">Privacy Policy</div>
+                        </el-col>
+                        <el-col :span="2">
+                            <div class="lineh-54">Terms of Service</div>
+                        </el-col>
+                        <el-col :span="4">
+                            <img class="backtotop-img" src="../assets/img/backtotop.svg" alt="">
+                            <a class="backtotop-a" href="javascript:void(0)" @click="scrollIntoView('#topRowAnchor')">Back
+                                to top</a>
+                        </el-col>
+                    </el-row>
+                </div>
+            </el-footer>
+        </el-container>
+        <!-- </div> -->
     </div>
 
 </template>
@@ -335,11 +360,26 @@ export default defineComponent({
     padding: 0;
 }
 
+.logo-dark img{
+    width: 155px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+#topAnchor {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    background-color: rgb(32, 40, 66, 1);
+}
+
+.headerscroll {
+    opacity: 0.8;
+}
+
 .dm-row {
-    height: 80px;
-    background: rgba(32, 40, 66, 1);
-    backdrop-filter: blur(10px);
-    line-height: 80px;
+    /* height: 80px; */
+    line-height: 60px;
 }
 
 .dm-empty {
@@ -386,7 +426,6 @@ export default defineComponent({
 }
 
 .typing {
-    /* width: 676px; */
     height: 142px;
     font-size: 48px;
     line-height: 134px;
@@ -395,11 +434,9 @@ export default defineComponent({
     padding-left: 90px;
     background-image: url(../assets/img/打字机背景.svg);
     background-repeat: no-repeat;
-    border: 1px dashed lightgray;
 }
 
 .first-line {
-    /* width: 325px; */
     margin-left: 30px;
     margin-top: 80px;
     font-size: 80px;
@@ -410,7 +447,6 @@ export default defineComponent({
 }
 
 .second-line {
-    /* width: 687px; */
     margin-left: 30px;
     font-size: 88px;
     font-weight: bold;
@@ -420,7 +456,6 @@ export default defineComponent({
 }
 
 .illustrate-line {
-    /* width: 625px; */
     height: 56px;
     margin-left: 30px;
     font-size: 20px;
@@ -431,7 +466,7 @@ export default defineComponent({
 
 .svg-view {
     margin-top: 100px;
-    border: 1px dashed lightgray;
+    /* border: 1px dashed lightgray; */
 }
 
 .roadmap-btn {
@@ -487,7 +522,7 @@ export default defineComponent({
 
 .re-subtitle {
     margin: 20px auto;
-    width: 1120px;
+    width: 825px;
     height: 66px;
     margin-bottom: 80px;
     font-size: 24px;
@@ -497,8 +532,8 @@ export default defineComponent({
 }
 
 .web2-description {
-    width: 580px;
-    height: 148px;
+    width: 560px;
+    height: 128px;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     text-align: start;
@@ -524,7 +559,7 @@ export default defineComponent({
     line-height: 27px;
 }
 
-.description-mid {
+.description-one {
     width: 1px;
     margin-top: 30px;
     height: 128px;
@@ -532,9 +567,17 @@ export default defineComponent({
     border-left: 1px dashed #202842;
 }
 
+.description-two {
+    width: 1px;
+    margin-top: 10px;
+    height: 182px;
+    opacity: 0.4;
+    border-left: 1px dashed #202842;
+}
+
 .web3-description {
-    width: 580px;
-    height: 148px;
+    width: 560px;
+    height: 128px;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     text-align: start;
@@ -628,7 +671,7 @@ export default defineComponent({
 
 <style scoped>
 .architecture-view {
-    height: 1111px;
+    height: 1000px;
     background: #FFFFFF;
 }
 
