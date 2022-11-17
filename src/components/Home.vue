@@ -341,7 +341,7 @@ export default defineComponent({
                         <el-col :span="2">
                             <div class="lineh-54">Privacy Policy</div>
                         </el-col>
-                        <el-col :span="2">
+                        <el-col :span="3">
                             <div class="lineh-54">Terms of Service</div>
                         </el-col>
                         <el-col :span="4">
@@ -457,7 +457,7 @@ export default defineComponent({
 
 .second-line {
     margin-left: 30px;
-    font-size: 88px;
+    font-size: 80px;
     font-weight: bold;
     color: #FFFFFF;
     height: 123px;
@@ -497,7 +497,7 @@ export default defineComponent({
     height: 81px;
     background-image: url(../assets/img/banner_bottom.svg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     text-align: center;
     background-color: rgba(22, 114, 240, 0.2);
 }
@@ -512,6 +512,7 @@ export default defineComponent({
 <style scoped>
 .revolution-view {
     /* height: 785px; */
+    padding-bottom: 80px;
     padding-top: 80px;
     background: linear-gradient(180deg, rgba(22, 114, 240, 0.2) 0%, rgba(22, 114, 240, 0.07) 100%);
 }
