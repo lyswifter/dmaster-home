@@ -83,19 +83,19 @@ export default defineComponent({
 
                     <el-col :span="18">
                         <el-row :gutter="40" justify="center">
-                            <el-col :span="2">
+                            <el-col :span="3">
                                 <a class="menu-title" href="javascript:void(0)"
                                     @click="scrollIntoView('#highlightAnchor')">Highlights</a>
                             </el-col>
-                            <el-col :span="2">
+                            <el-col :span="3">
                                 <a class="menu-title" href="javascript:void(0)"
                                     @click="scrollIntoView('#featuresAnchor')">Features</a>
                             </el-col>
-                            <el-col :span="2">
+                            <el-col :span="3">
                                 <a class="menu-title" href="javascript:void(0)"
                                     @click="scrollIntoView('#architectureAnchor')">Technology</a>
                             </el-col>
-                            <el-col :span="2">
+                            <el-col :span="3">
                                 <a class="menu-title" href="javascript:void(0)"
                                     @click="scrollIntoView('#roadmapAnchor')">Roadmap</a>
                             </el-col>
@@ -211,7 +211,7 @@ export default defineComponent({
                         <el-row :gutter="40" justify="space-around">
                             <el-col :span="10">
                                 <div class="owned-view">
-                                    <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
+                                    <img style="width: 160px;height: 170px;float: left;"
                                         src="../assets/img/icon_user_owned.svg" alt="">
                                     <div class="card-title">User-owned</div>
                                     <div class="card-subtitle">All personal data is stored in user’s device local
@@ -220,7 +220,7 @@ export default defineComponent({
                             </el-col>
                             <el-col :span="10">
                                 <div class="others-view">
-                                    <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
+                                    <img style="width: 160px;height: 170px;float: left;"
                                         src="../assets/img/icon_privacy.svg" alt="">
                                     <div class="card-title">Privacy-secured</div>
                                     <div class="card-subtitle">Prove your access rights without revealing your
@@ -232,7 +232,7 @@ export default defineComponent({
                         <el-row :gutter="40" justify="space-around" style="margin-top: 40px;">
                             <el-col :span="10">
                                 <div class="others-view">
-                                    <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
+                                    <img style="width: 160px;height: 170px;float: left;"
                                         src="../assets/img/icon_scenarios.svg" alt="">
                                     <div class="card-title">All scenarios</div>
                                     <div class="card-subtitle">Offer simplest user experience and earning opportunity in all
@@ -241,7 +241,7 @@ export default defineComponent({
                             </el-col>
                             <el-col :span="10">
                                 <div class="others-view">
-                                    <img style="width: 160px;height: 170px;float: left;border: 1px dashed lightgray;"
+                                    <img style="width: 160px;height: 170px;float: left;"
                                         src="../assets/img/icon_data_isolation.svg" alt="">
                                     <div class="card-title">No data-isolation</div>
                                     <div class="card-subtitle">Safari all web2 and web3 apps and collect personal
@@ -367,6 +367,7 @@ export default defineComponent({
 
 .dm-header {
     padding: 0;
+    height: 80px;
 }
 
 .logo-dark img{
@@ -387,8 +388,7 @@ export default defineComponent({
 }
 
 .dm-row {
-    /* height: 80px; */
-    line-height: 60px;
+    line-height: 80px;
 }
 
 .dm-empty {
@@ -422,9 +422,8 @@ export default defineComponent({
 
 .main-content {
     height: 785px;
-    /* background: linear-gradient(180deg, #000000 0%, #202842 100%); */
     background: rgba(32, 40, 66, 1);
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
 }
 
 .main-part-one {
@@ -498,13 +497,15 @@ export default defineComponent({
     margin-top: -1px;
     background-image: url(../assets/img/banner_bottom.svg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     text-align: center;
     background-color: rgba(22, 114, 240, 0.2);
+    background-position: center;
 }
 
 .botton-banner img {
-    margin-top: 30px;
+    margin-top: 35px;
+    text-align: center;
 }
 </style>
 
