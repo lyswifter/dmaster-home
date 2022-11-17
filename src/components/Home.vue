@@ -639,11 +639,8 @@ export default defineComponent({
 <style scoped>
 .feature-view {
     height: 820px;
-    background-image: url(../assets/img/featuresbg.png);
-    background-repeat: no-repeat;
+    background: url(../assets/img/featuresbg.png), no-repeat, linear-gradient(180deg, #EFF5FE 0%, #FFFFFF 100%);
     background-size: cover;
-    background-color: linear-gradient(180deg, #EFF5FE 0%, #FFFFFF 100%);
-    /* background: linear-gradient(180deg, #EFF5FE 0%, #FFFFFF 100%); */
 }
 
 .feature-content {
