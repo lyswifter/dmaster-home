@@ -304,14 +304,14 @@ export default defineComponent({
                                     <el-row :gutter="2" justify="start">
                                         <el-col :span="3"><a href="https://twitter.com/DmasterDID"><img style="width: 40px;height: 40px;border-radius: 20px;"
                                                 src="../assets/img/推特.svg" alt=""></a></el-col>
-                                        <!-- <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
+                                        <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
                                                 src="../assets/img/github.svg" alt=""></el-col>
                                         <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
                                                 src="../assets/img/telegram.svg" alt=""></el-col>
                                         <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
                                                 src="../assets/img/discord.svg" alt=""></el-col>
                                         <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
-                                                src="../assets/img/youtube.svg" alt=""></el-col> -->
+                                                src="../assets/img/youtube.svg" alt=""></el-col>
                                     </el-row>
 
                                     <div class="follow" style="margin-top: 40px;margin-bottom: 10px;font-size: 24px;color: #222840;">Contact us</div>
