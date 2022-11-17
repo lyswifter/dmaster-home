@@ -495,6 +495,7 @@ export default defineComponent({
 .botton-banner {
     width: 100%;
     height: 81px;
+    margin-top: -1px;
     background-image: url(../assets/img/banner_bottom.svg);
     background-repeat: no-repeat;
     background-size: contain;
@@ -503,7 +504,7 @@ export default defineComponent({
 }
 
 .botton-banner img {
-    margin-top: 35px;
+    margin-top: 30px;
 }
 </style>
 
