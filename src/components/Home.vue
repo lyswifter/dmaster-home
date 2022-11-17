@@ -1,19 +1,19 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { ElButton } from 'element-plus'
-
 import Typed from 'typed.js';
+import Svglogo from '../assets/img/dynamic.svg?component';
 
 export default defineComponent({
     name: "Home",
     components: {
         ElButton,
+        Svglogo,
     },
     data() {
         return {
             subscribeInput: "dmaster@gmail.com",
             issueUrl: "https://dmaster.com/issue",
-            isScroll: false,
         }
     },
     mounted() {
@@ -25,18 +25,6 @@ export default defineComponent({
             showCursor: false,
         };
         new Typed(".typing", options);
-
-        // let that = this
-        // window.addEventListener('scroll', function () {
-        //     // var header = document.querySelector("#topAnchor");
-        //     // header?.classList.toggle("headerscroll", window.scrollY > 0)
-
-        //     if (window.scrollY > 0) {
-        //         that.isScroll = true
-        //     } else {
-        //         that.isScroll = false
-        //     }
-        // })
     },
     methods: {
         reloadPage() {
@@ -65,13 +53,13 @@ export default defineComponent({
 
             <!-- el-header -->
 
-            <el-header class="dm-header topAnchor" :class="{ headerscroll: isScroll }">
+            <el-header class="dm-header topAnchor">
                 <el-row class="dm-row">
                     <el-col :span="3">
                         <a href="javascript:void(0)" @click="reloadPage">
                             <div class="logoview">
-                            <img src="../assets/img/logo_Dmaster.svg" alt="">
-                        </div>
+                                <img src="../assets/img/logo_Dmaster.svg" alt="">
+                            </div>
                         </a>
                     </el-col>
 
@@ -115,21 +103,19 @@ export default defineComponent({
 
                                 <div class="typing"></div>
 
-                                <h4 class="illustrate-line">Dmaster Network is a Decentralized Personal Profile Data Solution
+                                <h4 class="illustrate-line">Dmaster Network is a Decentralized Personal Profile Data
+                                    Solution
                                     powered by
                                     W3C DID standard and
                                     Blockchain.</h4>
 
                                 <el-row justify="start" style="margin-top: 50px;">
                                     <el-col :span="7" :offset="1">
-                                        <a class="roadmap-btn" href="javascript:void(0)" @click="scrollIntoView('#roadmapAnchor')">See the Roadmap</a>
-                                        <!-- <el-button class="roadmap-btn" type="text">
-                                        </el-button> -->
+                                        <a class="roadmap-btn" href="javascript:void(0)"
+                                            @click="scrollIntoView('#roadmapAnchor')">See the Roadmap</a>
                                     </el-col>
                                     <el-col :span="7">
                                         <a class="start-btn" :href="issueUrl">Get Start</a>
-                                        <!-- <el-button class="start-btn" type="primary">
-                                        </el-button> -->
                                     </el-col>
                                 </el-row>
                             </el-col>
@@ -139,6 +125,7 @@ export default defineComponent({
                                 <img class="svg-view" style="width: 592px;height: 526px;"
                                     src="../assets/img/dynamic.svg" alt="">
                                 <!-- </object> -->
+                                <!-- <Svglogo /> -->
                             </el-col>
                         </el-row>
                     </div>
@@ -182,15 +169,13 @@ export default defineComponent({
 
                         <el-row justify="space-around">
                             <el-col :span="10">
-                                <img style="width: 582px;height: 203px;"
-                                    src="../assets/img/web2.svg" alt="">
+                                <img style="width: 582px;height: 203px;" src="../assets/img/web2.svg" alt="">
                             </el-col>
 
                             <div class="description-two"></div>
 
                             <el-col :span="10">
-                                <img style="width: 582px;height: 203px;"
-                                    src="../assets/img/web3.svg" alt="">
+                                <img style="width: 582px;height: 203px;" src="../assets/img/web3.svg" alt="">
                             </el-col>
                         </el-row>
                     </div>
@@ -230,7 +215,8 @@ export default defineComponent({
                                     <img style="width: 160px;height: 170px;float: left;"
                                         src="../assets/img/icon_scenarios.svg" alt="">
                                     <div class="card-title">All scenarios</div>
-                                    <div class="card-subtitle">Offer simplest user experience and earning opportunity in all
+                                    <div class="card-subtitle">Offer simplest user experience and earning opportunity in
+                                        all
                                         online and offline scenarios.</div>
                                 </div>
                             </el-col>
@@ -253,7 +239,8 @@ export default defineComponent({
                         <!-- <div class="architecture-title">Dmaster Architecture</div> -->
 
                         <span class="architecture-title">Dmaster Architecture</span>
-                        <img style="width: 38px;height: 32px;margin-left: 4px;" src="../assets/img/littleqube.svg" alt="">
+                        <img style="width: 38px;height: 32px;margin-left: 4px;" src="../assets/img/littleqube.svg"
+                            alt="">
 
                         <div class="architecture-img">
                             <img style="width: 1199px;height: 710px;" src="../assets/img/结构图2@2x.png" alt="">
@@ -295,10 +282,12 @@ export default defineComponent({
                         <el-col :span="8">
                             <div class="container-right">
                                 <div>
-                                    <div class="follow" style="margin-bottom: 10px;font-size: 24px;color: #222840;">Follow us</div>
+                                    <div class="follow" style="margin-bottom: 10px;font-size: 24px;color: #222840;">
+                                        Follow us</div>
                                     <el-row :gutter="2" justify="start">
-                                        <el-col :span="3"><a href="https://twitter.com/DmasterDID"><img style="width: 40px;height: 40px;border-radius: 20px;"
-                                                src="../assets/img/推特.svg" alt=""></a></el-col>
+                                        <el-col :span="3"><a href="https://twitter.com/DmasterDID"><img
+                                                    style="width: 40px;height: 40px;border-radius: 20px;"
+                                                    src="../assets/img/推特.svg" alt=""></a></el-col>
                                         <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
                                                 src="../assets/img/github.svg" alt=""></el-col>
                                         <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
@@ -309,7 +298,9 @@ export default defineComponent({
                                                 src="../assets/img/youtube.svg" alt=""></el-col>
                                     </el-row>
 
-                                    <div class="follow" style="margin-top: 40px;margin-bottom: 10px;font-size: 24px;color: #222840;">Contact us</div>
+                                    <div class="follow"
+                                        style="margin-top: 40px;margin-bottom: 10px;font-size: 24px;color: #222840;">
+                                        Contact us</div>
                                     <el-row>
                                         <img style="width: 40px;height: 40px;border-radius: 20px;"
                                             src="../assets/img/邮箱.svg" alt="">
@@ -341,7 +332,8 @@ export default defineComponent({
                         </el-col>
                         <el-col :span="4">
                             <img class="backtotop-img" src="../assets/img/backtotop.svg" alt="">
-                            <a class="backtotop-a lineh-100" href="javascript:void(0)" @click="scrollIntoView('#topRowAnchor')">Back
+                            <a class="backtotop-a lineh-100" href="javascript:void(0)"
+                                @click="scrollIntoView('#topRowAnchor')">Back
                                 to top</a>
                         </el-col>
                     </el-row>
@@ -365,7 +357,7 @@ export default defineComponent({
     height: 80px;
 }
 
-.logo-dark img{
+.logo-dark img {
     width: 155px;
     height: 25px;
     vertical-align: middle;
@@ -534,7 +526,7 @@ export default defineComponent({
     padding-bottom: 80px;
     padding-top: 80px;
     background: linear-gradient(180deg, #D1E3FC 0%, #EEF5FE 100%);
-    
+
 }
 
 .revolution-content {
