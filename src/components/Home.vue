@@ -327,26 +327,26 @@ export default defineComponent({
 
                     <div class="footer-line"></div>
 
-                    <el-row justify="space-between">
+                    <el-row class="footer-footer" justify="space-between">
                         <el-col :span="2">
-                            <div class="lineh-54 logo-dark">
+                            <div class="lineh-100 logo-dark">
                                 <img src="../assets/img/logo_Dmaster_dark.svg" alt="">
                             </div>
                         </el-col>
                         <el-col :span="10">
-                            <div class="lineh-54">
+                            <div class="lineh-100">
                                 Copyright © 2022 Dmaster All rights reserved.
                             </div>
                         </el-col>
                         <el-col :span="2">
-                            <div class="lineh-54">Privacy Policy</div>
+                            <div class="lineh-100">Privacy Policy</div>
                         </el-col>
                         <el-col :span="3">
-                            <div class="lineh-54">Terms of Service</div>
+                            <div class="lineh-100">Terms of Service</div>
                         </el-col>
                         <el-col :span="4">
                             <img class="backtotop-img" src="../assets/img/backtotop.svg" alt="">
-                            <a class="backtotop-a" href="javascript:void(0)" @click="scrollIntoView('#topRowAnchor')">Back
+                            <a class="backtotop-a lineh-100" href="javascript:void(0)" @click="scrollIntoView('#topRowAnchor')">Back
                                 to top</a>
                         </el-col>
                     </el-row>
@@ -768,15 +768,19 @@ export default defineComponent({
 }
 
 .footer-line {
-    margin-top: 42px;
+    margin-top: 60px;
     width: 1440px;
     height: 1px;
     opacity: 0.2;
     border-top: 1px solid #222840;
 }
 
-.lineh-54 {
-    line-height: 54px;
+.footer-footer {
+    height: 100px;
+}
+
+.lineh-100 {
+    line-height: 100px;
 }
 
 .backtotop-img {
@@ -788,6 +792,5 @@ export default defineComponent({
 
 .backtotop-a {
     color: #222840;
-    line-height: 54px;
 }
 </style>
