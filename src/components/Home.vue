@@ -187,14 +187,14 @@ export default defineComponent({
 
                         <el-row justify="space-around">
                             <el-col :span="10">
-                                <img style="width: 582px;height: 203px;border: 1px dashed lightgrey;"
+                                <img style="width: 582px;height: 203px;"
                                     src="../assets/img/web2.svg" alt="">
                             </el-col>
 
                             <div class="description-two"></div>
 
                             <el-col :span="10">
-                                <img style="width: 582px;height: 203px;border: 1px dashed lightgrey;"
+                                <img style="width: 582px;height: 203px;"
                                     src="../assets/img/web3.svg" alt="">
                             </el-col>
                         </el-row>
