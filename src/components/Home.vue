@@ -18,7 +18,7 @@ export default defineComponent({
     },
     mounted() {
         var options = {
-            strings: ['ecentralized', 'ata', 'master'],
+            strings: ['By the people', 'Of the people', 'For the people'],
             typeSpeed: 100,
             smartBackspace: true,
             loop: true,
@@ -98,8 +98,8 @@ export default defineComponent({
                     <div class="main-part-one">
                         <el-row :gutter="10">
                             <el-col :span="13">
-                                <div class="first-line">MASTER</div>
-                                <div class="second-line">YOUR OWN DATA</div>
+                                <div class="first-line">THE ULTIMATE</div>
+                                <div class="second-line">ALL-IN-ONE DATA SOLUTION</div>
 
                                 <div class="typing"></div>
 
@@ -139,7 +139,7 @@ export default defineComponent({
                 <!-- Revolution-view -->
                 <div class="revolution-view">
                     <div class="revolution-content">
-                        <div class="re-title">The real Web3 revolution!</div>
+                        <div class="re-title">Master Your Own Data!</div>
                         <div class="re-subtitle">The ultimate all-in-one data sovereignty solution across Web2 and
                             Web3 in all time and in all scenarios. </div>
 
@@ -438,15 +438,16 @@ export default defineComponent({
     line-height: 134px;
     font-weight: 600;
     color: #FFFFFF;
-    padding-left: 90px;
-    background-image: url(../assets/img/打字机背景.svg);
+    padding-left: 60px;
+    background-image: url(../assets/img/打字机背景.png);
     background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .first-line {
     margin-left: 30px;
     margin-top: 80px;
-    font-size: 80px;
+    font-size: 60px;
     font-weight: bold;
     color: #FFFFFF;
     line-height: 120px;
@@ -455,7 +456,7 @@ export default defineComponent({
 
 .second-line {
     margin-left: 30px;
-    font-size: 80px;
+    font-size: 50px;
     font-weight: bold;
     color: #FFFFFF;
     height: 123px;
