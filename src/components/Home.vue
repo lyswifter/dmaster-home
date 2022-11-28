@@ -2,13 +2,11 @@
 import { defineComponent, ref } from 'vue'
 import { ElButton } from 'element-plus'
 import Typed from 'typed.js';
-import Svglogo from '../assets/img/dynamic.svg?component';
 
 export default defineComponent({
     name: "Home",
     components: {
         ElButton,
-        Svglogo,
     },
     data() {
         return {
