@@ -173,7 +173,7 @@ export default defineComponent({
                             <div class="description-two"></div>
 
                             <el-col :span="10">
-                                <img style="width: 582px;height: 203px;" src="../assets/img/web3.svg" alt="">
+                                <img style="width: 582px;height: 203px;" src="../assets/img/web3@2x.png" alt="">
                             </el-col>
                         </el-row>
                     </div>
@@ -188,18 +188,18 @@ export default defineComponent({
 
                         <el-row :gutter="40" justify="space-around">
                             <el-col :span="10">
-                                <div class="owned-view">
+                                <div class="others-view">
                                     <img style="width: 160px;height: 170px;float: left;"
-                                        src="../assets/img/icon_user_owned.svg" alt="">
+                                        src="../assets/icon_user_owned_slices/icon_user_owned@2x.png" alt="">
                                     <div class="card-title">User-owned</div>
-                                    <div class="card-subtitle">All personal data is stored in user’s device local
+                                    <div class="card-subtitle">All personal data is stored in user's device local
                                         storage or encrypedly on Dmaster blockchain.</div>
                                 </div>
                             </el-col>
                             <el-col :span="10">
                                 <div class="others-view">
                                     <img style="width: 160px;height: 170px;float: left;"
-                                        src="../assets/img/icon_privacy.svg" alt="">
+                                        src="../assets/icon_privacy_slices/icon_privacy@2x.png" alt="">
                                     <div class="card-title">Privacy-secured</div>
                                     <div class="card-subtitle">Prove your access rights without revealing your
                                         private information built-in via zk-VM.</div>
@@ -211,7 +211,7 @@ export default defineComponent({
                             <el-col :span="10">
                                 <div class="others-view">
                                     <img style="width: 160px;height: 170px;float: left;"
-                                        src="../assets/img/icon_scenarios.svg" alt="">
+                                        src="../assets/icon_scenarios_slices/icon_scenarios@2x.png" alt="">
                                     <div class="card-title">All scenarios</div>
                                     <div class="card-subtitle">Offer simplest user experience and earning opportunity in
                                         all
@@ -221,7 +221,7 @@ export default defineComponent({
                             <el-col :span="10">
                                 <div class="others-view">
                                     <img style="width: 160px;height: 170px;float: left;"
-                                        src="../assets/img/icon_data_isolation.svg" alt="">
+                                        src="../assets/icon_data_isolation_slices/icon_data_isolation@2x.png" alt="">
                                     <div class="card-title">No data-isolation</div>
                                     <div class="card-subtitle">Safari all web2 and web3 apps and collect personal
                                         tags and preference in just one ID.</div>
@@ -742,6 +742,7 @@ export default defineComponent({
 .dm-footer {
     height: auto;
     background-color: white;
+    margin-top: 80px;
 }
 
 .footer-container {
