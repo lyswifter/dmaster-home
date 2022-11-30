@@ -445,7 +445,7 @@ export default defineComponent({
 .first-line {
     margin-left: 30px;
     margin-top: 80px;
-    font-size: 60px;
+    font-size: 54px;
     font-weight: bold;
     color: #FFFFFF;
     line-height: 120px;
@@ -454,11 +454,11 @@ export default defineComponent({
 
 .second-line {
     margin-left: 30px;
-    font-size: 50px;
+    font-size: 52px;
     font-weight: bold;
     color: #FFFFFF;
-    height: 123px;
-    line-height: 132px;
+    height: 90px;
+    line-height: 90px;
 }
 
 .illustrate-line {
