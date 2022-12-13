@@ -1,345 +1,323 @@
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import { ElButton } from 'element-plus'
-import Typed from 'typed.js';
-
+import { defineComponent, ref } from "vue";
+import { ElButton } from "element-plus";
+import Typed from "typed.js";
+import "../style.css";
 export default defineComponent({
-    name: "Home",
-    components: {
-        ElButton,
+  name: "Home",
+  components: {
+    ElButton,
+  },
+  data() {
+    return {
+      subscribeInput: "dmaster@gmail.com",
+      issueUrl: "https://dmaster.com/issue",
+    };
+  },
+  mounted() {
+    var options = {
+      strings: ["By the people", "Of the people", "For the people"],
+      typeSpeed: 100,
+      smartBackspace: true,
+      loop: true,
+      showCursor: false,
+    };
+    new Typed(".typing", options);
+  },
+  methods: {
+    reloadPage() {
+      location.reload();
     },
-    data() {
-        return {
-            subscribeInput: "dmaster@gmail.com",
-            issueUrl: "https://dmaster.com/issue",
-        }
+    handleSelect(key: string, keyPath: string[]) {
+      console.log(key, keyPath);
     },
-    mounted() {
-        var options = {
-            strings: ['By the people', 'Of the people', 'For the people'],
-            typeSpeed: 100,
-            smartBackspace: true,
-            loop: true,
-            showCursor: false,
-        };
-        new Typed(".typing", options);
+    scrollIntoView(aim: string) {
+      document.querySelector(aim)?.scrollIntoView({
+        behavior: "smooth",
+      });
     },
-    methods: {
-        reloadPage() {
-            location.reload()
-        },
-        handleSelect(key: string, keyPath: string[]) {
-            console.log(key, keyPath)
-        },
-        scrollIntoView(aim: string) {
-            document.querySelector(aim)?.scrollIntoView({
-                behavior: "smooth"
-            })
-        },
-        subcribeAction() {
-            alert("subscribe")
-        }
-    }
-})
+    subcribeAction() {
+      alert("subscribe");
+    },
+  },
+});
 </script>
 
 <template>
-    <div id="container">
-        <!-- <div class="common-layout"> -->
-        <el-container>
-            <div id="topRowAnchor"></div>
+  <div id="container">
+    <!-- <div class="common-layout"> -->
+    <el-container>
+      <div id="topRowAnchor"></div>
 
-            <!-- el-header -->
+      <!-- el-header -->
 
-            <el-header class="dm-header topAnchor">
-                <el-row class="dm-row">
-                    <el-col :span="3">
-                        <a href="javascript:void(0)" @click="reloadPage">
-                            <div class="logoview">
-                                <img src="../assets/img/logo_Dmaster.svg" alt="">
-                            </div>
-                        </a>
-                    </el-col>
+      <el-header class="dm-header topAnchor">
+        <el-row class="dm-row">
+          <el-col :span="3">
+            <a href="javascript:void(0)" @click="reloadPage">
+              <div class="logoview">
+                <img src="../assets/img/logo_Dmaster.svg" alt="">
+              </div>
+            </a>
+          </el-col>
 
-                    <el-col :span="18">
-                        <el-row :gutter="40" justify="center">
-                            <el-col :span="3">
-                                <a class="menu-title" href="javascript:void(0)"
-                                    @click="scrollIntoView('#highlightAnchor')">Highlights</a>
-                            </el-col>
-                            <el-col :span="3">
-                                <a class="menu-title" href="javascript:void(0)"
-                                    @click="scrollIntoView('#featuresAnchor')">Features</a>
-                            </el-col>
-                            <el-col :span="3">
-                                <a class="menu-title" href="javascript:void(0)"
-                                    @click="scrollIntoView('#architectureAnchor')">Technology</a>
-                            </el-col>
-                            <el-col :span="3">
-                                <a class="menu-title" href="javascript:void(0)"
-                                    @click="scrollIntoView('#roadmapAnchor')">Roadmap</a>
-                            </el-col>
-                        </el-row>
-                    </el-col>
+          <el-col :span="18">
+            <el-row :gutter="40" justify="center">
+              <el-col :span="3">
+                <a class="menu-title" href="javascript:void(0)" @click="scrollIntoView('#highlightAnchor')">Highlights</a>
+              </el-col>
+              <el-col :span="3">
+                <a class="menu-title" href="javascript:void(0)" @click="scrollIntoView('#featuresAnchor')">Features</a>
+              </el-col>
+              <el-col :span="3">
+                <a class="menu-title" href="javascript:void(0)" @click="scrollIntoView('#architectureAnchor')">Technology</a>
+              </el-col>
+              <el-col :span="3">
+                <a class="menu-title" href="javascript:void(0)" @click="scrollIntoView('#roadmapAnchor')">Roadmap</a>
+              </el-col>
+            </el-row>
+          </el-col>
 
-                    <el-col :span="3">
-                        <a class="menu-btn" :href="issueUrl">Dmaster APP</a>
-                    </el-col>
+          <el-col :span="3">
+            <a class="menu-btn" :href="issueUrl">Dmaster APP</a>
+          </el-col>
+        </el-row>
+      </el-header>
+
+      <!-- el-main -->
+
+      <el-main class="dm-main">
+        <!-- Top view -->
+        <div class="main-content">
+          <div class="main-part-one">
+            <el-row :gutter="10">
+              <el-col :span="13">
+                <div class="first-line">THE ULTIMATE</div>
+                <div class="second-line">ALL-IN-ONE DATA SOLUTION</div>
+
+                <div class="typing"></div>
+
+                <h4 class="illustrate-line">Dmaster Network is a Decentralized Personal Profile Data
+                  Solution
+                  powered by
+                  W3C DID standard and
+                  Blockchain.</h4>
+
+                <el-row justify="start" style="margin-top: 50px;">
+                  <el-col :span="7" :offset="1">
+                    <a class="roadmap-btn" href="javascript:void(0)" @click="scrollIntoView('#roadmapAnchor')">See the Roadmap</a>
+                  </el-col>
+                  <el-col :span="7">
+                    <a class="start-btn" :href="issueUrl">Get Start</a>
+                  </el-col>
                 </el-row>
-            </el-header>
+              </el-col>
 
-            <!-- el-main -->
+              <el-col :span="11" style="text-align: right;">
+                <!-- <object class="svg-view" data="../assets/img/log-in-girl.svg" type="image/svg+xml" height="526px" width="592px"> -->
+                <img class="svg-view" style="width: 592px;height: 526px;" src="../assets/img/dynamic.svg" alt="">
+                <!-- </object> -->
+                <!-- <Svglogo /> -->
+              </el-col>
+            </el-row>
+          </div>
+        </div>
 
-            <el-main class="dm-main">
-                <!-- Top view -->
-                <div class="main-content">
-                    <div class="main-part-one">
-                        <el-row :gutter="10">
-                            <el-col :span="13">
-                                <div class="first-line">THE ULTIMATE</div>
-                                <div class="second-line">ALL-IN-ONE DATA SOLUTION</div>
+        <!-- Banner view -->
+        <div class="botton-banner" id="highlightAnchor">
+          <img style="width: 38px;height: 32px;" src="../assets/img/littleqube.svg" alt="">
+        </div>
 
-                                <div class="typing"></div>
+        <!-- Revolution-view -->
+        <div class="revolution-view">
+          <div class="revolution-content">
+            <div class="re-title">Master Your Own Data!</div>
+            <div class="re-subtitle">The ultimate all-in-one data sovereignty solution across Web2 and
+              Web3 in all time and in all scenarios. </div>
 
-                                <h4 class="illustrate-line">Dmaster Network is a Decentralized Personal Profile Data
-                                    Solution
-                                    powered by
-                                    W3C DID standard and
-                                    Blockchain.</h4>
-
-                                <el-row justify="start" style="margin-top: 50px;">
-                                    <el-col :span="7" :offset="1">
-                                        <a class="roadmap-btn" href="javascript:void(0)"
-                                            @click="scrollIntoView('#roadmapAnchor')">See the Roadmap</a>
-                                    </el-col>
-                                    <el-col :span="7">
-                                        <a class="start-btn" :href="issueUrl">Get Start</a>
-                                    </el-col>
-                                </el-row>
-                            </el-col>
-
-                            <el-col :span="11" style="text-align: right;">
-                                <!-- <object class="svg-view" data="../assets/img/log-in-girl.svg" type="image/svg+xml" height="526px" width="592px"> -->
-                                <img class="svg-view" style="width: 592px;height: 526px;"
-                                    src="../assets/img/dynamic.svg" alt="">
-                                <!-- </object> -->
-                                <!-- <Svglogo /> -->
-                            </el-col>
-                        </el-row>
-                    </div>
+            <el-row justify="space-around">
+              <el-col :span="10">
+                <div class="web2-description">
+                  <div class="web2-title">Web2</div>
+                  <div class="web2-subtitle">Nowadays, your data is in cloud service of Web2
+                    giants and you never own.
+                  </div>
                 </div>
+              </el-col>
 
-                <!-- Banner view -->
-                <div class="botton-banner" id="highlightAnchor">
-                    <img style="width: 38px;height: 32px;" src="../assets/img/littleqube.svg" alt="">
+              <div class="description-one"></div>
+
+              <el-col :span="10">
+                <div class="web3-description">
+                  <div class="web3-title">Web3</div>
+                  <div class="web3-subtitle">With Dmaster, your data is in your local device or
+                    being encryped on-chain
+                    without third-party unauthentic access.</div>
                 </div>
+              </el-col>
+            </el-row>
 
-                <!-- Revolution-view -->
-                <div class="revolution-view">
-                    <div class="revolution-content">
-                        <div class="re-title">Master Your Own Data!</div>
-                        <div class="re-subtitle">The ultimate all-in-one data sovereignty solution across Web2 and
-                            Web3 in all time and in all scenarios. </div>
+            <h2>vs</h2>
 
-                        <el-row justify="space-around">
-                            <el-col :span="10">
-                                <div class="web2-description">
-                                    <div class="web2-title">Web2</div>
-                                    <div class="web2-subtitle">Nowadays, your data is in cloud service of Web2
-                                        giants and you never own.
-                                    </div>
-                                </div>
-                            </el-col>
+            <el-row justify="space-around">
+              <el-col :span="10">
+                <img style="width: 582px;height: 203px;" src="../assets/img/web2.svg" alt="">
+              </el-col>
 
-                            <div class="description-one"></div>
+              <div class="description-two"></div>
 
-                            <el-col :span="10">
-                                <div class="web3-description">
-                                    <div class="web3-title">Web3</div>
-                                    <div class="web3-subtitle">With Dmaster, your data is in your local device or
-                                        being encryped on-chain
-                                        without third-party unauthentic access.</div>
-                                </div>
-                            </el-col>
-                        </el-row>
+              <el-col :span="10">
+                <img style="width: 582px;height: 203px;" src="../assets/img/web3@2x.png" alt="">
+              </el-col>
+            </el-row>
+          </div>
+        </div>
 
-                        <h2>vs</h2>
+        <!-- Features view -->
+        <div class="feature-view" id="featuresAnchor">
+          <div class="feature-content">
+            <img style="width: 38px;height: 32px;margin-top: 80px;" src="../assets/img/littleqube.svg" alt="">
+            <div class="feature-title">Features</div>
 
-                        <el-row justify="space-around">
-                            <el-col :span="10">
-                                <img style="width: 582px;height: 203px;" src="../assets/img/web2.svg" alt="">
-                            </el-col>
-
-                            <div class="description-two"></div>
-
-                            <el-col :span="10">
-                                <img style="width: 582px;height: 203px;" src="../assets/img/web3@2x.png" alt="">
-                            </el-col>
-                        </el-row>
-                    </div>
+            <el-row :gutter="40" justify="space-around">
+              <el-col :span="10">
+                <div class="others-view">
+                  <img style="width: 160px;height: 170px;float: left;" src="../assets/icon_user_owned_slices/icon_user_owned@2x.png" alt="">
+                  <div class="card-title">User-owned</div>
+                  <div class="card-subtitle">All personal data is stored in user's device local
+                    storage or encrypedly on Dmaster blockchain.</div>
                 </div>
-
-                <!-- Features view -->
-                <div class="feature-view" id="featuresAnchor">
-                    <div class="feature-content">
-                        <img style="width: 38px;height: 32px;margin-top: 80px;" src="../assets/img/littleqube.svg"
-                            alt="">
-                        <div class="feature-title">Features</div>
-
-                        <el-row :gutter="40" justify="space-around">
-                            <el-col :span="10">
-                                <div class="others-view">
-                                    <img style="width: 160px;height: 170px;float: left;"
-                                        src="../assets/icon_user_owned_slices/icon_user_owned@2x.png" alt="">
-                                    <div class="card-title">User-owned</div>
-                                    <div class="card-subtitle">All personal data is stored in user's device local
-                                        storage or encrypedly on Dmaster blockchain.</div>
-                                </div>
-                            </el-col>
-                            <el-col :span="10">
-                                <div class="others-view">
-                                    <img style="width: 160px;height: 170px;float: left;"
-                                        src="../assets/icon_privacy_slices/icon_privacy@2x.png" alt="">
-                                    <div class="card-title">Privacy-secured</div>
-                                    <div class="card-subtitle">Prove your access rights without revealing your
-                                        private information built-in via zk-VM.</div>
-                                </div>
-                            </el-col>
-                        </el-row>
-
-                        <el-row :gutter="40" justify="space-around" style="margin-top: 40px;">
-                            <el-col :span="10">
-                                <div class="others-view">
-                                    <img style="width: 160px;height: 170px;float: left;"
-                                        src="../assets/icon_scenarios_slices/icon_scenarios@2x.png" alt="">
-                                    <div class="card-title">All scenarios</div>
-                                    <div class="card-subtitle">Offer simplest user experience and earning opportunity in
-                                        all
-                                        online and offline scenarios.</div>
-                                </div>
-                            </el-col>
-                            <el-col :span="10">
-                                <div class="others-view">
-                                    <img style="width: 160px;height: 170px;float: left;"
-                                        src="../assets/icon_data_isolation_slices/icon_data_isolation@2x.png" alt="">
-                                    <div class="card-title">No data-isolation</div>
-                                    <div class="card-subtitle">Safari all web2 and web3 apps and collect personal
-                                        tags and preference in just one ID.</div>
-                                </div>
-                            </el-col>
-                        </el-row>
-                    </div>
+              </el-col>
+              <el-col :span="10">
+                <div class="others-view">
+                  <img style="width: 160px;height: 170px;float: left;" src="../assets/icon_privacy_slices/icon_privacy@2x.png" alt="">
+                  <div class="card-title">Privacy-secured</div>
+                  <div class="card-subtitle">Prove your access rights without revealing your
+                    private information built-in via zk-VM.</div>
                 </div>
+              </el-col>
+            </el-row>
 
-                <!-- Dmaster Architecture view -->
-                <div class="architecture-view" id="architectureAnchor">
-                    <div class="architecture-content">
-                        <!-- <div class="architecture-title">Dmaster Architecture</div> -->
-
-                        <span class="architecture-title">Dmaster Architecture</span>
-                        <img style="width: 38px;height: 32px;margin-left: 4px;" src="../assets/img/littleqube.svg"
-                            alt="">
-
-                        <div class="architecture-img">
-                            <img style="width: 1199px;height: 710px;" src="../assets/img/结构图2@2x.png" alt="">
-                        </div>
-                    </div>
+            <el-row :gutter="40" justify="space-around" style="margin-top: 40px;">
+              <el-col :span="10">
+                <div class="others-view">
+                  <img style="width: 160px;height: 170px;float: left;" src="../assets/icon_scenarios_slices/icon_scenarios@2x.png" alt="">
+                  <div class="card-title">All scenarios</div>
+                  <div class="card-subtitle">Offer simplest user experience and earning opportunity in
+                    all
+                    online and offline scenarios.</div>
                 </div>
-
-                <!-- Roadmap view -->
-                <div class="roadmap-view" id="roadmapAnchor">
-                    <div class="roadmap-content">
-                        <img src="../assets/img/road_map.png" alt="">
-                    </div>
+              </el-col>
+              <el-col :span="10">
+                <div class="others-view">
+                  <img style="width: 160px;height: 170px;float: left;" src="../assets/icon_data_isolation_slices/icon_data_isolation@2x.png" alt="">
+                  <div class="card-title">No data-isolation</div>
+                  <div class="card-subtitle">Safari all web2 and web3 apps and collect personal
+                    tags and preference in just one ID.</div>
                 </div>
+              </el-col>
+            </el-row>
+          </div>
+        </div>
 
-            </el-main>
+        <!-- Dmaster Architecture view -->
+        <div class="architecture-view" id="architectureAnchor">
+          <div class="architecture-content">
+            <!-- <div class="architecture-title">Dmaster Architecture</div> -->
 
-            <!-- Footer -->
+            <span class="architecture-title">Dmaster Architecture</span>
+            <img style="width: 38px;height: 32px;margin-left: 4px;" src="../assets/img/littleqube.svg" alt="">
 
-            <el-footer class="dm-footer">
-                <div class="footer-container">
-                    <el-row justify="space-between">
-                        <el-col :span="10">
-                            <div class="container-left">
-                                <div class="footer-title">Get Updates to Your Inbox</div>
+            <div class="architecture-img">
+              <img style="width: 1199px;height: 710px;" src="../assets/img/结构图2@2x.png" alt="">
+            </div>
+          </div>
+        </div>
 
-                                <el-row :gutter="1">
-                                    <el-col :span="16">
-                                        <el-input class="subscribe-input" v-model="subscribeInput"
-                                            placeholder="Please input" />
-                                    </el-col>
-                                    <el-col :span="2">
-                                        <el-button class="subscribe-btn" type="primary" @click="subcribeAction">
-                                            Subscribe</el-button>
-                                    </el-col>
-                                </el-row>
-                            </div>
-                        </el-col>
+        <!-- Roadmap view -->
+        <div class="roadmap-view" id="roadmapAnchor">
+          <div class="roadmap-content">
+            <img src="../assets/img/road_map.png" alt="">
+          </div>
+        </div>
 
-                        <el-col :span="8">
-                            <div class="container-right">
-                                <div>
-                                    <div class="follow" style="margin-bottom: 10px;font-size: 24px;color: #222840;">
-                                        Follow us</div>
-                                    <el-row :gutter="2" justify="start">
-                                        <el-col :span="3"><a href="https://twitter.com/DmasterDID"><img
-                                                    style="width: 40px;height: 40px;border-radius: 20px;"
-                                                    src="../assets/img/推特.svg" alt=""></a></el-col>
-                                        <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
-                                                src="../assets/img/github.svg" alt=""></el-col>
-                                        <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
-                                                src="../assets/img/telegram.svg" alt=""></el-col>
-                                        <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
-                                                src="../assets/img/discord.svg" alt=""></el-col>
-                                        <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;"
-                                                src="../assets/img/youtube.svg" alt=""></el-col>
-                                    </el-row>
+      </el-main>
 
-                                    <div class="follow"
-                                        style="margin-top: 40px;margin-bottom: 10px;font-size: 24px;color: #222840;">
-                                        Contact us</div>
-                                    <el-row>
-                                        <img style="width: 40px;height: 40px;border-radius: 20px;"
-                                            src="../assets/img/邮箱.svg" alt="">
-                                        <span style="line-height: 40px; margin-left: 5px;">contact@dmaster.com</span>
-                                    </el-row>
-                                </div>
-                            </div>
-                        </el-col>
-                    </el-row>
+      <!-- Footer -->
 
-                    <div class="footer-line"></div>
+      <el-footer class="dm-footer">
+        <div class="footer-container">
+          <el-row justify="space-between">
+            <el-col :span="10">
+              <div class="container-left">
+                <div class="footer-title">Get Updates to Your Inbox</div>
 
-                    <el-row class="footer-footer" justify="space-between">
-                        <el-col :span="2">
-                            <div class="lineh-100 logo-dark">
-                                <img src="../assets/img/logo_Dmaster_dark.svg" alt="">
-                            </div>
-                        </el-col>
-                        <el-col :span="10">
-                            <div class="lineh-100">
-                                Copyright © 2022 Dmaster All rights reserved.
-                            </div>
-                        </el-col>
-                        <el-col :span="2">
-                            <div class="lineh-100">Privacy Policy</div>
-                        </el-col>
-                        <el-col :span="3">
-                            <div class="lineh-100">Terms of Service</div>
-                        </el-col>
-                        <el-col :span="4">
-                            <img class="backtotop-img" src="../assets/img/backtotop.svg" alt="">
-                            <a class="backtotop-a lineh-100" href="javascript:void(0)"
-                                @click="scrollIntoView('#topRowAnchor')">Back
-                                to top</a>
-                        </el-col>
-                    </el-row>
+                <el-row :gutter="1">
+                  <el-col :span="16">
+                    <el-input class="subscribe-input" v-model="subscribeInput" placeholder="Please input" />
+                  </el-col>
+                  <el-col :span="2">
+                    <el-button class="subscribe-btn" type="primary" @click="subcribeAction">
+                      Subscribe</el-button>
+                  </el-col>
+                </el-row>
+              </div>
+            </el-col>
+
+            <el-col :span="8">
+              <div class="container-right">
+                <div>
+                  <div class="follow" style="margin-bottom: 10px;font-size: 24px;color: #222840;">
+                    Follow us</div>
+                  <el-row :gutter="2" justify="start">
+                    <el-col :span="3"><a href="https://twitter.com/DmasterDID"><img style="width: 40px;height: 40px;border-radius: 20px;" src="../assets/img/推特.svg" alt=""></a></el-col>
+                    <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;" src="../assets/img/github.svg" alt=""></el-col>
+                    <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;" src="../assets/img/telegram.svg" alt=""></el-col>
+                    <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;" src="../assets/img/discord.svg" alt=""></el-col>
+                    <el-col :span="3"><img style="width: 40px;height: 40px;border-radius: 20px;" src="../assets/img/youtube.svg" alt=""></el-col>
+                  </el-row>
+
+                  <div class="follow" style="margin-top: 40px;margin-bottom: 10px;font-size: 24px;color: #222840;">
+                    Contact us</div>
+                  <el-row>
+                    <img style="width: 40px;height: 40px;border-radius: 20px;" src="../assets/img/邮箱.svg" alt="">
+                    <span style="line-height: 40px; margin-left: 5px;">contact@dmaster.com</span>
+                  </el-row>
                 </div>
-            </el-footer>
-        </el-container>
-        <!-- </div> -->
-    </div>
+              </div>
+            </el-col>
+          </el-row>
+
+          <div class="footer-line"></div>
+
+          <el-row class="footer-footer" justify="space-between">
+            <el-col :span="2">
+              <div class="lineh-100 logo-dark">
+                <img src="../assets/img/logo_Dmaster_dark.svg" alt="">
+              </div>
+            </el-col>
+            <el-col :span="10">
+              <div class="lineh-100">
+                Copyright © 2022 Dmaster All rights reserved.
+              </div>
+            </el-col>
+            <el-col :span="2">
+              <div class="lineh-100">Privacy Policy</div>
+            </el-col>
+            <el-col :span="3">
+              <div class="lineh-100">Terms of Service</div>
+            </el-col>
+            <el-col :span="4">
+              <img class="backtotop-img" src="../assets/img/backtotop.svg" alt="">
+              <a class="backtotop-a lineh-100" href="javascript:void(0)" @click="scrollIntoView('#topRowAnchor')">Back
+                to top</a>
+            </el-col>
+          </el-row>
+        </div>
+      </el-footer>
+    </el-container>
+    <!-- </div> -->
+  </div>
 
 </template>
 
@@ -347,66 +325,66 @@ export default defineComponent({
 
 <style scoped>
 .flex-grow {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .dm-header {
-    padding: 0;
-    height: 80px;
+  padding: 0;
+  height: 80px;
 }
 
 .logo-dark img {
-    width: 155px;
-    height: 25px;
-    vertical-align: middle;
+  width: 155px;
+  height: 25px;
+  vertical-align: middle;
 }
 
 .topAnchor {
-    position: sticky;
-    top: 0;
-    z-index: 99;
-    background-color: rgb(32, 40, 66, 1);
-    /* backdrop-filter: blur(10); */
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  background-color: rgb(32, 40, 66, 1);
+  /* backdrop-filter: blur(10); */
 }
 
 .headerscroll {
-    /* opacity: 0.8; */
-    /* background-color: rgb(32, 40, 66, 0.8); */
+  /* opacity: 0.8; */
+  /* background-color: rgb(32, 40, 66, 0.8); */
 }
 
 .dm-row {
-    line-height: 80px;
+  line-height: 80px;
 }
 
 .dm-empty {
-    border: 1px solid transparent;
+  border: 1px solid transparent;
 }
 
 .menu-title {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .logoview img {
-    width: 155px;
-    height: 24px;
-    vertical-align: middle;
+  width: 155px;
+  height: 24px;
+  vertical-align: middle;
 }
 
 .menu-btn {
-    margin-top: 11%;
-    display: block;
-    text-align: center;
-    width: 130px;
-    height: 32px;
-    background: #3670E8;
-    border-radius: 20px;
-    line-height: 32px;
-    font-size: 16px;
+  margin-top: 11%;
+  display: block;
+  text-align: center;
+  width: 130px;
+  height: 32px;
+  background: #3670e8;
+  border-radius: 20px;
+  line-height: 32px;
+  font-size: 16px;
 }
 
 .menu-btn:hover {
-    color: white;
-    opacity: 0.7;
+  color: white;
+  opacity: 0.7;
 }
 </style>
 
@@ -414,107 +392,107 @@ export default defineComponent({
 
 <style scoped>
 .dm-main {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 .main-content {
-    height: 785px;
-    background: rgba(32, 40, 66, 1);
-    /* backdrop-filter: blur(10px); */
+  height: 785px;
+  background: rgba(32, 40, 66, 1);
+  /* backdrop-filter: blur(10px); */
 }
 
 .main-part-one {
-    width: 1440px;
-    margin: 0 auto;
-    text-align: start;
-    color: white;
+  width: 1440px;
+  margin: 0 auto;
+  text-align: start;
+  color: white;
 }
 
 .typing {
-    height: 142px;
-    font-size: 48px;
-    line-height: 134px;
-    font-weight: 600;
-    color: #FFFFFF;
-    padding-left: 60px;
-    background-image: url(../assets/img/打字机背景.png);
-    background-repeat: no-repeat;
-    background-size: contain;
+  height: 142px;
+  font-size: 48px;
+  line-height: 134px;
+  font-weight: 600;
+  color: #ffffff;
+  padding-left: 60px;
+  background-image: url(../assets/img/打字机背景.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .first-line {
-    margin-left: 30px;
-    margin-top: 80px;
-    font-size: 54px;
-    font-weight: bold;
-    color: #FFFFFF;
-    line-height: 120px;
-    height: 112px;
+  margin-left: 30px;
+  margin-top: 80px;
+  font-size: 54px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 120px;
+  height: 112px;
 }
 
 .second-line {
-    margin-left: 30px;
-    font-size: 52px;
-    font-weight: bold;
-    color: #FFFFFF;
-    height: 90px;
-    line-height: 90px;
+  margin-left: 30px;
+  font-size: 52px;
+  font-weight: bold;
+  color: #ffffff;
+  height: 90px;
+  line-height: 90px;
 }
 
 .illustrate-line {
-    height: 56px;
-    margin-left: 30px;
-    font-size: 20px;
-    font-weight: 400;
-    color: #FFFFFF;
-    line-height: 30px;
+  height: 56px;
+  margin-left: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 30px;
 }
 
 .svg-view {
-    margin-top: 100px;
-    /* border: 1px dashed lightgray; */
+  margin-top: 100px;
+  /* border: 1px dashed lightgray; */
 }
 
 .roadmap-btn {
-    display: block;
-    line-height: 48px;
-    text-align: center;
-    width: 185px;
-    height: 48px;
-    border-radius: 10px;
-    border: 0.5px solid #3087FF;
+  display: block;
+  line-height: 48px;
+  text-align: center;
+  width: 185px;
+  height: 48px;
+  border-radius: 10px;
+  border: 0.5px solid #3087ff;
 }
 
 .start-btn {
-    display: block;
-    line-height: 50px;
-    text-align: center;
-    width: 185px;
-    height: 50px;
-    background: #1672F0;
-    border-radius: 10px;
+  display: block;
+  line-height: 50px;
+  text-align: center;
+  width: 185px;
+  height: 50px;
+  background: #1672f0;
+  border-radius: 10px;
 }
 
 .start-btn:hover {
-    color: white;
-    opacity: 0.7;
+  color: white;
+  opacity: 0.7;
 }
 
 .botton-banner {
-    width: 100%;
-    height: 81px;
-    margin-top: -1px;
-    background-image: url(../assets/img/banner_bottom.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-align: center;
-    background-color: #D1E3FC;
-    background-position: center;
+  width: 100%;
+  height: 81px;
+  margin-top: -1px;
+  background-image: url(../assets/img/banner_bottom.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  background-color: #d1e3fc;
+  background-position: center;
 }
 
 .botton-banner img {
-    margin-top: 35px;
-    text-align: center;
+  margin-top: 35px;
+  text-align: center;
 }
 </style>
 
@@ -522,106 +500,105 @@ export default defineComponent({
 
 <style scoped>
 .revolution-view {
-    padding-bottom: 80px;
-    padding-top: 80px;
-    background: linear-gradient(180deg, #D1E3FC 0%, #EEF5FE 100%);
-
+  padding-bottom: 80px;
+  padding-top: 80px;
+  background: linear-gradient(180deg, #d1e3fc 0%, #eef5fe 100%);
 }
 
 .revolution-content {
-    width: 1440px;
-    margin: 0 auto;
+  width: 1440px;
+  margin: 0 auto;
 }
 
 .re-title {
-    height: 101px;
-    font-size: 72px;
-    font-weight: bold;
-    color: #202842;
-    line-height: 108px;
+  height: 101px;
+  font-size: 72px;
+  font-weight: bold;
+  color: #202842;
+  line-height: 108px;
 }
 
 .re-subtitle {
-    margin: 20px auto;
-    width: 825px;
-    height: 66px;
-    margin-bottom: 80px;
-    font-size: 24px;
-    font-weight: 500;
-    color: #202842;
-    line-height: 35px;
+  margin: 20px auto;
+  width: 825px;
+  height: 66px;
+  margin-bottom: 80px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #202842;
+  line-height: 35px;
 }
 
 .web2-description {
-    width: 560px;
-    height: 128px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    text-align: start;
-    padding: 20px;
+  width: 560px;
+  height: 128px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  text-align: start;
+  padding: 20px;
 }
 
 .web2-title {
-    width: 59px;
-    height: 28px;
-    font-size: 20px;
-    font-weight: 800;
-    color: #202842;
-    line-height: 30px;
+  width: 59px;
+  height: 28px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #202842;
+  line-height: 30px;
 }
 
 .web2-subtitle {
-    margin-top: 10px;
-    width: 540px;
-    height: 50px;
-    font-size: 18px;
-    font-weight: 300;
-    color: rgba(32, 40, 66, 0.8);
-    line-height: 27px;
+  margin-top: 10px;
+  width: 540px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(32, 40, 66, 0.8);
+  line-height: 27px;
 }
 
 .description-one {
-    width: 1px;
-    margin-top: 30px;
-    height: 128px;
-    opacity: 0.4;
-    border-left: 1px dashed #202842;
+  width: 1px;
+  margin-top: 30px;
+  height: 128px;
+  opacity: 0.4;
+  border-left: 1px dashed #202842;
 }
 
 .description-two {
-    width: 1px;
-    margin-top: 10px;
-    height: 182px;
-    opacity: 0.4;
-    border-left: 1px dashed #202842;
+  width: 1px;
+  margin-top: 10px;
+  height: 182px;
+  opacity: 0.4;
+  border-left: 1px dashed #202842;
 }
 
 .web3-description {
-    width: 560px;
-    height: 128px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
-    text-align: start;
-    padding: 20px;
+  width: 560px;
+  height: 128px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  text-align: start;
+  padding: 20px;
 }
 
 .web3-title {
-    width: 60px;
-    height: 28px;
-    font-size: 20px;
-    font-weight: 800;
-    color: #1672F0;
-    line-height: 30px;
+  width: 60px;
+  height: 28px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #1672f0;
+  line-height: 30px;
 }
 
 .web3-subtitle {
-    margin-top: 10px;
-    width: 540px;
-    height: 50px;
-    font-size: 18px;
-    font-weight: 300;
-    color: rgba(32, 40, 66, 0.8);
-    line-height: 27px;
+  margin-top: 10px;
+  width: 540px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(32, 40, 66, 0.8);
+  line-height: 27px;
 }
 </style>
 
@@ -629,63 +606,64 @@ export default defineComponent({
 
 <style scoped>
 .feature-view {
-    height: 820px;
-    background: url(../assets/img/featuresbg.png), no-repeat, linear-gradient(180deg, #EFF5FE 0%, #FFFFFF 100%);
-    background-size: cover;
+  height: 820px;
+  background: url(../assets/img/featuresbg.png), no-repeat,
+    linear-gradient(180deg, #eff5fe 0%, #ffffff 100%);
+  background-size: cover;
 }
 
 .feature-content {
-    width: 1440px;
-    margin: 0 auto;
+  width: 1440px;
+  margin: 0 auto;
 }
 
 .feature-title {
-    height: 101px;
-    font-size: 72px;
-    font-weight: bold;
-    color: #202842;
-    line-height: 108px;
-    margin-bottom: 40px;
+  height: 101px;
+  font-size: 72px;
+  font-weight: bold;
+  color: #202842;
+  line-height: 108px;
+  margin-bottom: 40px;
 }
 
 .owned-view {
-    width: 570px;
-    padding: 30px 15px;
-    height: 170px;
-    background: #FFFFFF;
-    border-radius: 20px;
-    border: 1px solid #FFFFFF;
-    text-align: start;
+  width: 570px;
+  padding: 30px 15px;
+  height: 170px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #ffffff;
+  text-align: start;
 }
 
 .others-view {
-    width: 570px;
-    padding: 30px 15px;
-    height: 170px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    border: 1px solid #FFFFFF;
-    text-align: start;
+  width: 570px;
+  padding: 30px 15px;
+  height: 170px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  border: 1px solid #ffffff;
+  text-align: start;
 }
 
 .card-title {
-    margin-left: 185px;
-    height: 51px;
-    font-size: 36px;
-    font-weight: bold;
-    color: #202842;
-    line-height: 55px;
+  margin-left: 185px;
+  height: 51px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #202842;
+  line-height: 55px;
 }
 
 .card-subtitle {
-    width: 380px;
-    margin-left: 185px;
-    margin-top: 16px;
-    height: 50px;
-    font-size: 18px;
-    font-weight: 300;
-    color: rgba(32, 40, 66, 0.8);
-    line-height: 27px;
+  width: 380px;
+  margin-left: 185px;
+  margin-top: 16px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(32, 40, 66, 0.8);
+  line-height: 27px;
 }
 </style>
 
@@ -693,28 +671,28 @@ export default defineComponent({
 
 <style scoped>
 .architecture-view {
-    height: 1000px;
-    background: #FFFFFF;
-    padding-top: 100px;
+  height: 1000px;
+  background: #ffffff;
+  padding-top: 100px;
 }
 
 .architecture-content {
-    width: 1440px;
-    margin: 0 auto;
-    text-align: start;
+  width: 1440px;
+  margin: 0 auto;
+  text-align: start;
 }
 
 .architecture-title {
-    height: 101px;
-    font-size: 72px;
-    font-weight: bold;
-    color: #202842;
-    line-height: 108px;
+  height: 101px;
+  font-size: 72px;
+  font-weight: bold;
+  color: #202842;
+  line-height: 108px;
 }
 
 .architecture-img {
-    margin: 50px auto;
-    text-align: center;
+  margin: 50px auto;
+  text-align: center;
 }
 </style>
 
@@ -722,17 +700,17 @@ export default defineComponent({
 
 <style scoped>
 .roadmap-view {
-    background-color: white;
+  background-color: white;
 }
 
 .roadmap-content {
-    margin: 0 auto;
-    width: 1360px;
-    background-color: white;
+  margin: 0 auto;
+  width: 1360px;
+  background-color: white;
 }
 
 .roadmap-content img {
-    width: 100%;
+  width: 100%;
 }
 </style>
 
@@ -740,72 +718,72 @@ export default defineComponent({
 
 <style scoped>
 .dm-footer {
-    height: auto;
-    background-color: white;
-    margin-top: 80px;
+  height: auto;
+  background-color: white;
+  margin-top: 80px;
 }
 
 .footer-container {
-    width: 1440px;
-    margin: 0 auto;
-    margin-top: 40px;
+  width: 1440px;
+  margin: 0 auto;
+  margin-top: 40px;
 }
 
 .container-left {
-    text-align: start;
+  text-align: start;
 }
 
 .footer-title {
-    margin-bottom: 5px;
-    height: 51px;
-    font-size: 36px;
-    font-weight: bold;
-    color: #222840;
-    line-height: 55px;
+  margin-bottom: 5px;
+  height: 51px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #222840;
+  line-height: 55px;
 }
 
 .subscribe-input {
-    width: 385px;
-    height: 48px;
-    background: rgba(32, 40, 66, 0.1);
-    border-radius: 4px;
+  width: 385px;
+  height: 48px;
+  background: rgba(32, 40, 66, 0.1);
+  border-radius: 4px;
 }
 
 .subscribe-btn {
-    width: 121px;
-    height: 48px;
-    background: #1672F0;
-    border-radius: 8px;
+  width: 121px;
+  height: 48px;
+  background: #1672f0;
+  border-radius: 8px;
 }
 
 .container-right {
-    text-align: left;
+  text-align: left;
 }
 
 .footer-line {
-    margin-top: 60px;
-    width: 1440px;
-    height: 1px;
-    opacity: 0.2;
-    border-top: 1px solid #222840;
+  margin-top: 60px;
+  width: 1440px;
+  height: 1px;
+  opacity: 0.2;
+  border-top: 1px solid #222840;
 }
 
 .footer-footer {
-    height: 100px;
+  height: 100px;
 }
 
 .lineh-100 {
-    line-height: 100px;
+  line-height: 100px;
 }
 
 .backtotop-img {
-    width: 24px;
-    height: 25px;
-    border-radius: 4px;
-    vertical-align: middle;
+  width: 24px;
+  height: 25px;
+  border-radius: 4px;
+  vertical-align: middle;
 }
 
 .backtotop-a {
-    color: #222840;
+  color: #222840;
 }
 </style>
