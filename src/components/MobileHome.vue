@@ -48,7 +48,7 @@
         <img src="../assets/mobleImg/littleqube@2x.png" alt="" class="littleqube">
         <span class="mobile_data_features_title">Features</span>
         <div class="mobile_data_features_item">
-          <img src="../assets/mobleImg/icon_user owned@2x.png" alt="" class="mobile_data_features_item_img">
+          <img src="../assets/mobleImg/icon_user_owned.png" alt="" class="mobile_data_features_item_img">
           <span class="mobile_data_features_item_title">User-owned</span>
           <span class="mobile_data_features_item_intruduce">All personal data is stored in user's device local storage
             or encrypedly on Dmaster blockchain.</span>
@@ -66,7 +66,7 @@
             all online and offline scenarios.</span>
         </div>
         <div class="mobile_data_features_item">
-          <img src="../assets/mobleImg/icon_data isolation@2x.png" alt="" class="mobile_data_features_item_img">
+          <img src="../assets/mobleImg/icon_data_isolation@2x.png" alt="" class="mobile_data_features_item_img">
           <span class="mobile_data_features_item_title">No data-isolation</span>
           <span class="mobile_data_features_item_intruduce">Safari all web2 and web3 apps and collect personal tags and
             preference in just one ID.</span>
