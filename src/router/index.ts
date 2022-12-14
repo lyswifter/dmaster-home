@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Home from "../components/Home.vue"
 import MobileHome from "../components/MobileHome.vue"
-const routes: RouteRecordRaw[] = [
+const routes = [
     {
         path: '/',
         name: "home",
@@ -13,9 +13,9 @@ const routes: RouteRecordRaw[] = [
         component: MobileHome,
     },
 ]
+// 创建路由管理器 模式和路由
 const router = createRouter({
-    routes,
-    history: createWebHistory()
+    history: createWebHashHistory(),
+    routes
 })
-
 export default router

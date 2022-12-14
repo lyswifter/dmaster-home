@@ -17,8 +17,8 @@
       <div class="mobile_people_img">By the people</div>
       <div class="mobile_intruduce">Dmaster Network is a Decentralized Personal Profile Data Solution powered by W3C DID
         standard and Blockchain.</div>
-      <div class="mobile_start_button">Get Start</div>
-      <div class="mobile_map_button">See the Roadmap</div>
+      <div class="mobile_start_button" @click="openNoticeFun">Get Start</div>
+      <div class="mobile_map_button" @click="toFun(4)">See the Roadmap</div>
     </div>
     <div class="mobile_data">
       <div class="mobile_data_head">
@@ -111,7 +111,7 @@
     <div class="mobile_bottom">
       <div class="mobile_bottom_title">Get Updates to Your Lubox</div>
       <input class="mobile_bottom_input" placeholder="e.g.hello@dmaster.com" />
-      <div class="mobile_bottom_submit" @click="subcribeAction">Subscribe</div>
+      <div class="mobile_bottom_submit">Subscribe</div>
       <div class="mobile_bottom_us">
         <span>Follow us</span>
         <div class="mobile_bottom_us_box">
@@ -150,6 +150,22 @@
         <span class="mobile_mask_body_button" @click="toAppFun(5)">Dmaster APP</span>
       </div>
     </div>
+    <div class="mobile_notice_mask" v-if="isShowNotice">
+      <div class="mobile_notice_mask_body">
+        <div class="mobile_notice_mask_img">
+          <div class="mobile_notice_mask_img_title">
+            <span>Please open the page on the computer.</span>
+            <div class="mobile_notice_mask_img_intruduce">It may not be convenient to use on the mobile phone.</div>
+          </div>
+          <img src="../assets/mobleImg/pic_openoncomputer@2x.png" alt="">
+        </div>
+        <div class="mobile_notice_mask_url">https://dmaster.com/issue</div>
+        <div class="mobile_notice_mask_copy" @click.stop="test" v-clipboard:copy="url" v-clipboard:success="onCopy" v-clipboard:error="onError">Copy URL</div>
+      </div>
+      <div class="mobile_notice_mask_close" @click="closeNoticeFun">
+        <img src="../assets/mobleImg/icon_close_white@2x.png" alt="">
+      </div>
+    </div>
   </div>
 </template>
   
@@ -159,21 +175,34 @@ export default {
   data() {
     return {
       isShowTop: false,
-      isShowMask: false
+      isShowMask: false,
+      isShowNotice: false,
+      url: "https://dmaster.com/issue",
     }
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
-    subcribeAction() {
-      alert("subscribe");
-    },
     toAppFun() {
-      alert("提交");
+      this.isShowNotice = true
     },
-    toTopFun() {
-      document.documentElement.scrollTop = 0
+    closeNoticeFun() {
+      this.isShowNotice = false
+    },
+    openNoticeFun() {
+      this.isShowNotice = true
+    },
+    onCopy(e) {
+      alert("成功")
+    },
+    // 复制失败
+    onError(e) {
+      //   this.$Message.error({
+      //     content: '失败',
+      //     background: true,
+      //     duration: 3
+      //   });
     },
     handleScroll() {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop // 滚动条偏移量
@@ -204,7 +233,10 @@ export default {
         this.$el.querySelector(".mobile_roadmap")
           .scrollIntoView({ block: "start", behavior: "smooth" });
       }
-    }
+    },
+    toTopFun() {
+      document.documentElement.scrollTop = 0
+    },
   },
   destroyed() {
     document.removeEventListener('scroll', this.handleScroll)
@@ -364,7 +396,6 @@ export default {
   font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #202842;
-  line-height: 0.8rem;
 }
 
 .mobile_data_title_intruduce {
@@ -519,7 +550,6 @@ export default {
   font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #202842;
-  line-height: 0.8rem;
 }
 
 .dmasterimg {
@@ -546,7 +576,7 @@ export default {
 }
 
 .mobile_roadmap_box {
-  margin-top: 2.9rem;
+  margin-top: 2.5rem;
   padding: 0 0.6rem;
 }
 
@@ -606,7 +636,6 @@ export default {
   font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #202842;
-  line-height: 0.8rem;
 }
 
 .mobile_bottom_input {
@@ -764,6 +793,85 @@ export default {
   color: #ffffff;
   text-align: center;
   line-height: 1rem;
+}
+
+.mobile_notice_mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.mobile_notice_mask_body {
+  width: 6.7rem;
+  height: 8.28rem;
+  background: #ffffff;
+  box-shadow: 0px -0.1rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.6rem;
+  margin: 0 auto;
+  margin-top: 2.2rem;
+  padding: 0.4rem;
+}
+
+.mobile_notice_mask_img {
+  width: 100%;
+  height: 5.18rem;
+  background: #1e2844;
+  border-radius: 0.4rem;
+  font-size: 0.4rem;
+  font-family: Poppins-Bold, Poppins;
+  font-weight: bold;
+  color: #ffffff;
+  padding-top: 0.4rem;
+}
+
+.mobile_notice_mask_img_title {
+  padding: 0 0.4rem;
+}
+
+.mobile_notice_mask_img_intruduce {
+  font-size: 0.28rem;
+  font-family: Poppins-Medium, Poppins;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 0.2rem;
+}
+
+.mobile_notice_mask_img img {
+  width: 100%;
+  height: 2.66rem;
+}
+
+.mobile_notice_mask_url {
+  font-size: 0.28rem;
+  font-family: Poppins-Medium, Poppins;
+  font-weight: 500;
+  color: #202842;
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+.mobile_notice_mask_copy {
+  font-size: 0.28rem;
+  font-family: Poppins-Medium, Poppins;
+  font-weight: 500;
+  color: #1672f0;
+  margin-top: 0.4rem;
+  text-align: center;
+}
+
+.mobile_notice_mask_close {
+  margin: 0 auto;
+  margin-top: 0.6rem;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.mobile_notice_mask_close img {
+  width: 100%;
+  height: 100%;
 }
 </style>
   
