@@ -560,11 +560,11 @@ export default {
 
 .mobile_roadmap {
   width: 100%;
-  height: 24rem;
+  height: 1200px;
   background-image: url("../assets/mobleImg/roadmap_bg@2x.png");
   background-repeat: no-repeat;
   background-size: contain;
-  padding-top: 1.6rem;
+  padding-top: 80px;
 }
 
 .mobile_roadmap_title {
@@ -576,7 +576,7 @@ export default {
 }
 
 .mobile_roadmap_box {
-  margin-top: 2.5rem;
+  margin-top: 150px;
   padding: 0 0.6rem;
 }
 
@@ -590,7 +590,7 @@ export default {
   font-size: 0.26rem;
   font-family: Poppins-Regular, Poppins;
   font-weight: 400;
-  margin-bottom: 2rem;
+  margin-bottom: 100px;
   float: right;
 }
 
@@ -604,7 +604,7 @@ export default {
   font-size: 0.26rem;
   font-family: Poppins-Regular, Poppins;
   font-weight: 400;
-  margin-bottom: 2rem;
+  margin-bottom: 100px;
   float: left;
 }
 
