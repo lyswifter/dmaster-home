@@ -289,30 +289,23 @@ export default defineComponent({
           </el-row>
 
           <div class="footer-line"></div>
-
-          <el-row class="footer-footer" justify="space-between">
-            <el-col :span="2">
-              <div class="lineh-100 logo-dark">
-                <img src="../assets/img/logo_Dmaster_dark.svg" alt="">
+          <div class="footer-footer">
+            <div class="lineh-100 logo-dark">
+              <img src="../assets/img/logo_Dmaster_dark.svg" alt="">
+            </div>
+            <div class="footer-footer-center">
+              <span>Copyright © 2022 Dmaster All rights reserved.</span>
+              <div class="footer-footer-center-bold">
+                <span>Privacy Policy</span>
+                <span style="margin-left:10px">Terms of Service</span>
               </div>
-            </el-col>
-            <el-col :span="10">
-              <div class="lineh-100">
-                Copyright © 2022 Dmaster All rights reserved.
-              </div>
-            </el-col>
-            <el-col :span="2">
-              <div class="lineh-100">Privacy Policy</div>
-            </el-col>
-            <el-col :span="3">
-              <div class="lineh-100">Terms of Service</div>
-            </el-col>
-            <el-col :span="4">
+            </div>
+            <div>
               <img class="backtotop-img" src="../assets/img/backtotop.svg" alt="">
               <a class="backtotop-a lineh-100" href="javascript:void(0)" @click="scrollIntoView('#topRowAnchor')">Back
                 to top</a>
-            </el-col>
-          </el-row>
+            </div>
+          </div>
         </div>
       </el-footer>
     </el-container>
@@ -354,6 +347,8 @@ export default defineComponent({
 
 .dm-row {
   line-height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .dm-empty {
@@ -371,7 +366,7 @@ export default defineComponent({
 }
 
 .menu-btn {
-  margin-top: 11%;
+  /* margin-top: 11%; */
   display: block;
   text-align: center;
   width: 130px;
@@ -380,6 +375,7 @@ export default defineComponent({
   border-radius: 20px;
   line-height: 32px;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .menu-btn:hover {
@@ -770,8 +766,26 @@ export default defineComponent({
 
 .footer-footer {
   height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 10px;
 }
-
+.footer-footer-center {
+  font-size: 12px;
+  font-family: Poppins-Regular, Poppins;
+  font-weight: 400;
+  color: rgba(34, 40, 64, 0.5);
+  display: flex;
+  align-items: center;
+}
+.footer-footer-center-bold {
+  margin-left: 30px;
+  font-size: 12px;
+  font-family: Poppins-Medium, Poppins;
+  font-weight: 500;
+  color: #222840;
+}
 .lineh-100 {
   line-height: 100px;
 }
