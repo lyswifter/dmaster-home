@@ -716,7 +716,7 @@ export default defineComponent({
 .dm-footer {
   height: auto;
   background-color: white;
-  margin-top: 80px;
+  padding-top: 80px;
 }
 
 .footer-container {
