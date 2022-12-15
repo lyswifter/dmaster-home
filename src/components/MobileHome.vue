@@ -147,7 +147,7 @@
         <span class="mobile_mask_body_item" @click="toFun(2)">Features</span>
         <span class="mobile_mask_body_item" @click="toFun(3)">Architecture</span>
         <span class="mobile_mask_body_item" @click="toFun(4)">Roadmap</span>
-        <span class="mobile_mask_body_button" @click="toAppFun(5)">Dmaster APP</span>
+        <span class="mobile_mask_body_button" @click="toAppFun">Dmaster APP</span>
       </div>
     </div>
     <div class="mobile_notice_mask" v-if="isShowNotice">
@@ -160,7 +160,10 @@
           <img src="../assets/mobleImg/pic_openoncomputer@2x.png" alt="">
         </div>
         <div class="mobile_notice_mask_url">https://dmaster.com/issue</div>
-        <div class="mobile_notice_mask_copy" @click.stop="test" v-clipboard:copy="url" v-clipboard:success="onCopy" v-clipboard:error="onError">Copy URL</div>
+        <div :id="id" @click="copy" class="mobile_notice_mask_copy">
+          Copy URL
+          <slot />
+        </div>
       </div>
       <div class="mobile_notice_mask_close" @click="closeNoticeFun">
         <img src="../assets/mobleImg/icon_close_white@2x.png" alt="">
@@ -170,15 +173,20 @@
 </template>
   
   <script>
+import { ElMessage, ElButton, ElTooltip } from "element-plus";
 export default {
   name: '',
   data() {
     return {
+      id: "",
       isShowTop: false,
       isShowMask: false,
       isShowNotice: false,
       url: "https://dmaster.com/issue",
     }
+  },
+  created() {
+    this.id = 'text' + Math.random()
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll)
@@ -193,16 +201,18 @@ export default {
     openNoticeFun() {
       this.isShowNotice = true
     },
-    onCopy(e) {
-      alert("成功")
-    },
-    // 复制失败
-    onError(e) {
-      //   this.$Message.error({
-      //     content: '失败',
-      //     background: true,
-      //     duration: 3
-      //   });
+    copy() {
+      const input = document.createElement('input')
+      document.body.appendChild(input)
+      input.setAttribute('value', document.getElementById(this.id).innerText)
+      input.select()
+      if (document.execCommand('copy')) {
+        ElMessage({
+          message: "已复制",
+          type: "success",
+        });
+      }
+      document.body.removeChild(input)
     },
     handleScroll() {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop // 滚动条偏移量
