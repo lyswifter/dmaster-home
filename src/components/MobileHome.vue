@@ -576,7 +576,7 @@ export default {
   height: 1200px;
   background-image: url("../assets/mobleImg/roadmap_bg@2x.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   padding-top: 80px;
   position: relative;
 }
