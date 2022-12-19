@@ -722,7 +722,7 @@ export default defineComponent({
 .footer-container {
   width: 1440px;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 120px;
 }
 
 .container-left {
