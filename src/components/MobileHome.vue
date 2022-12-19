@@ -586,6 +586,8 @@ export default {
   height: 100%;
   width: 100%;
   z-index: -1;
+  left: 0;
+  top: 0;
 }
 .mobile_roadmap_title {
   font-size: 0.68rem;
