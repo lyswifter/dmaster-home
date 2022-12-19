@@ -80,6 +80,7 @@
       <img src="../assets/mobleImg/dmasterimg.png" alt="" class="dmasterimg">
     </div>
     <div class="mobile_roadmap" ref="mobile_roadmap">
+      <div class="mobile_roadmap_position"></div>
       <div class="mobile_roadmap_title">Roadmap</div>
       <div class="mobile_roadmap_box">
         <div class="mobile_roadmap_Item_right">
@@ -577,9 +578,15 @@ export default {
   background-repeat: no-repeat;
   background-size: contain;
   padding-top: 80px;
-  background: #ffffff;
+  position: relative;
 }
-
+.mobile_roadmap_position {
+  position: absolute;
+  background: #ffffff;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
 .mobile_roadmap_title {
   font-size: 0.68rem;
   font-family: Poppins-Bold, Poppins;
