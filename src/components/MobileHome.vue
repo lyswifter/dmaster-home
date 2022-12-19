@@ -6,15 +6,12 @@
       <img src="../assets/mobleImg/icon_menu@2x.png" alt="" @click="openFun" class="mobile_mune_menulog" v-if="!isShowMask" />
       <img src="../assets/mobleImg/icon_menuclose@2x.png" alt="" @click="closeFun" class="mobile_mune_menulog" v-else />
     </div>
-    <div class="backtop" v-show="isShowTop" @click="toTopFun">
-      <img src="../assets/mobleImg/backtop.png" alt="">
-    </div>
     <div class="mobile_head">
       <div class="mobile_main_img">
         <img src="../assets/mobleImg/bannerMain.png" alt="">
       </div>
       <div class="mobile_main_title">THE ULTIMATE ALL-IN-ONE DATA SOLUTION</div>
-      <div class="mobile_people_img">By the people</div>
+      <div class="mobile_people_img"></div>
       <div class="mobile_intruduce">Dmaster Network is a Decentralized Personal Profile Data Solution powered by W3C DID
         standard and Blockchain.</div>
       <div class="mobile_start_button" @click="openNoticeFun">Get Start</div>
@@ -34,13 +31,13 @@
       </div>
       <div class="mobile_data_web">
         <div class="mobile_data_web_title">Web2</div>
-        <span>Nowadays, your data is in cloud service of Web2 giants and you never own.</span>
+        <span class="mobile_data_web_intruduce">Nowadays, your data is in cloud service of Web2 giants and you never own.</span>
       </div>
       <img src="../assets/mobleImg/web2@2x.png" alt="" class="mobile_data_medio">
       <div class="mobile_data_vs">VS</div>
       <div class="mobile_data_web">
         <div class="mobile_data_web_title mobile_data_web_title1">Web3</div>
-        <span>With Dmaster, your data is in your local device or being encryped on-chain without third-party unauthentic
+        <span class="mobile_data_web_intruduce">With Dmaster, your data is in your local device or being encryped on-chain without third-party unauthentic
           access.</span>
       </div>
       <img src="../assets/mobleImg/web3@2x.png" alt="" class="mobile_data_web3">
@@ -131,6 +128,9 @@
       </div>
       <div class="mobile_bottom_feiji">
         <span class="mobile_bottom_feiji_world">Dmaster</span>
+        <div class="backtop" @click="toTopFun">
+          <img src="../assets/mobleImg/backtop.png" alt="">
+        </div>
       </div>
       <div class="mobile_bottom_line"></div>
       <div class="mobile_bottom_author">
@@ -173,13 +173,13 @@
 </template>
   
   <script>
-import { ElMessage, ElButton, ElTooltip } from "element-plus";
+import { ElMessage } from "element-plus";
+import Typed from "typed.js";
 export default {
   name: '',
   data() {
     return {
       id: "",
-      isShowTop: false,
       isShowMask: false,
       isShowNotice: false,
       url: "https://dmaster.com/issue",
@@ -189,7 +189,14 @@ export default {
     this.id = 'text' + Math.random()
   },
   mounted() {
-    window.addEventListener('scroll', this.handleScroll)
+    var options = {
+      strings: ["By the people", "Of the people", "For the people"],
+      typeSpeed: 100,
+      smartBackspace: true,
+      loop: true,
+      showCursor: false,
+    };
+    new Typed(".mobile_people_img", options);
   },
   methods: {
     toAppFun() {
@@ -213,14 +220,6 @@ export default {
         });
       }
       document.body.removeChild(input)
-    },
-    handleScroll() {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop // 滚动条偏移量
-      if (scrollTop > 2000) {
-        this.isShowTop = true
-      } else {
-        this.isShowTop = false
-      }
     },
     openFun() {
       this.isShowMask = true
@@ -248,9 +247,6 @@ export default {
       document.documentElement.scrollTop = 0
     },
   },
-  destroyed() {
-    document.removeEventListener('scroll', this.handleScroll)
-  },
 }
   </script>
   
@@ -265,7 +261,7 @@ export default {
   left: 0;
   width: 100%;
   height: 1.6rem;
-  background: rgba(32, 40, 66, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(0.1rem);
   z-index: 99;
   display: flex;
@@ -406,6 +402,7 @@ export default {
   font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #202842;
+  line-height: 1rem;
 }
 
 .mobile_data_title_intruduce {
@@ -417,11 +414,12 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  line-height: 0.42rem;
 }
 
-.mobile_data_title_intruduce span {
-  margin-bottom: 0.1rem;
-}
+/* .mobile_data_title_intruduce span {
+  line-height: 0.42rem;
+} */
 
 .mobile_data_web {
   width: 100%;
@@ -442,7 +440,11 @@ export default {
   color: #202842;
   margin-bottom: 0.2rem;
 }
-
+.mobile_data_web_intruduce {
+  font-weight: 400;
+  color: rgba(32, 40, 66, 0.8);
+  line-height: 0.36rem;
+}
 .mobile_data_medio {
   width: 100%;
   height: 2.34rem;
@@ -484,9 +486,10 @@ export default {
 .mobile_data_features_title {
   font-size: 0.68rem;
   font-family: Poppins-Bold, Poppins;
-  font-weight: bold;
+  font-weight: 600;
   color: #202842;
   margin-bottom: 0.4rem;
+  line-height: 1.02rem;
 }
 
 .mobile_data_features_item {
@@ -511,6 +514,7 @@ export default {
   font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #202842;
+  line-height: 0.6rem;
 }
 
 .mobile_data_features_item_intruduce {
@@ -519,6 +523,7 @@ export default {
   font-weight: 300;
   color: rgba(32, 40, 66, 0.8);
   text-align: center;
+  line-height: 0.4rem;
 }
 
 .mobile_data_bottom {
@@ -560,6 +565,7 @@ export default {
   font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #202842;
+  line-height: 1.02rem;
 }
 
 .dmasterimg {
@@ -646,6 +652,7 @@ export default {
   font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #202842;
+  line-height: 0.92rem;
 }
 
 .mobile_bottom_input {
@@ -715,6 +722,7 @@ export default {
   margin-top: 1.92rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .mobile_bottom_feiji_world {
@@ -729,10 +737,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  right: 0.4rem;
-  bottom: 2.12rem;
-  z-index: 99;
 }
 
 .backtop img {
