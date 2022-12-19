@@ -2,7 +2,7 @@
   <div class="mobileApp">
     <div class="mobile_mune">
       <div class="mobile_mune_menulog"></div>
-      <img src="../assets/mobleImg/logo_Dmaster@2x.png" alt="" class="mobile_mune_log">
+      <img src="../assets/mobleImg/logo_Dmaster@2x.png" alt="" @click="toTopFun" class="mobile_mune_log">
       <img src="../assets/mobleImg/icon_menu@2x.png" alt="" @click="openFun" class="mobile_mune_menulog" v-if="!isShowMask" />
       <img src="../assets/mobleImg/icon_menuclose@2x.png" alt="" @click="closeFun" class="mobile_mune_menulog" v-else />
     </div>
@@ -127,7 +127,7 @@
         </div>
       </div>
       <div class="mobile_bottom_feiji">
-        <span class="mobile_bottom_feiji_world">Dmaster</span>
+        <img class="mobile_bottom_feiji_world" src="../assets/mobleImg/dmaster.png" />
         <div class="backtop" @click="toTopFun">
           <img src="../assets/mobleImg/backtop.png" alt="">
         </div>
@@ -383,7 +383,7 @@ export default {
   width: 100%;
   background-image: url("../assets/mobleImg/dataHeadImg.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -399,7 +399,6 @@ export default {
   margin: 0 auto;
   text-align: center;
   font-size: 0.68rem;
-  font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #202842;
   line-height: 1rem;
@@ -485,7 +484,6 @@ export default {
 
 .mobile_data_features_title {
   font-size: 0.68rem;
-  font-family: Poppins-Bold, Poppins;
   font-weight: 600;
   color: #202842;
   margin-bottom: 0.4rem;
@@ -562,7 +560,6 @@ export default {
   width: 4rem;
   text-align: center;
   font-size: 0.68rem;
-  font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #202842;
   line-height: 1.02rem;
@@ -644,12 +641,11 @@ export default {
   height: 14.48rem;
   background: #ffffff;
   padding: 0 0.4rem;
+  padding-top: 0.8rem;
 }
 
 .mobile_bottom_title {
-  margin-top: 0.8rem;
   font-size: 0.6rem;
-  font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #202842;
   line-height: 0.92rem;
@@ -726,7 +722,8 @@ export default {
 }
 
 .mobile_bottom_feiji_world {
-  color: rgba(34, 40, 64, 0.1);
+  width: 2.4rem;
+  height: 0.34rem;
 }
 
 .backtop {
