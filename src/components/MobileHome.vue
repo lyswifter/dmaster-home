@@ -328,7 +328,6 @@ export default {
 
 .mobile_intruduce {
   font-size: 0.24rem;
-  font-family: Poppins-Regular, Poppins;
   font-weight: 400;
   color: #ffffff;
   padding: 0 0.4rem;
@@ -578,6 +577,7 @@ export default {
   background-repeat: no-repeat;
   background-size: contain;
   padding-top: 80px;
+  background: #ffffff;
 }
 
 .mobile_roadmap_title {
@@ -601,7 +601,6 @@ export default {
   padding: 0.4rem;
   color: #ffffff;
   font-size: 0.26rem;
-  font-family: Poppins-Regular, Poppins;
   font-weight: 400;
   margin-bottom: 100px;
   float: right;
@@ -615,7 +614,6 @@ export default {
   padding: 0.4rem;
   color: #ffffff;
   font-size: 0.26rem;
-  font-family: Poppins-Regular, Poppins;
   font-weight: 400;
   margin-bottom: 100px;
   float: left;
@@ -709,7 +707,6 @@ export default {
 
 .mobile_bottom_us_box_contact {
   font-size: 0.28rem;
-  font-family: Poppins-Regular, Poppins;
   font-weight: 400;
   color: #222840;
 }
@@ -751,7 +748,6 @@ export default {
 
 .mobile_bottom_author {
   font-size: 0.24rem;
-  font-family: Poppins-Regular, Poppins;
   font-weight: 400;
   color: rgba(34, 40, 64, 0.5);
   text-align: center;
@@ -760,7 +756,6 @@ export default {
 .mobile_bottom_author_div {
   margin-top: 0.12rem;
   font-size: 0.24rem;
-  font-family: Poppins-Medium, Poppins;
   font-weight: 500;
   color: #222840;
   display: flex;
@@ -782,7 +777,6 @@ export default {
   flex-direction: column;
   align-items: center;
   font-size: 0.32rem;
-  font-family: Poppins-Regular, Poppins;
   font-weight: 400;
   color: #ffffff;
   margin-top: 2.8rem;
