@@ -113,7 +113,9 @@
       <div class="mobile_bottom_us">
         <span>Follow us</span>
         <div class="mobile_bottom_us_box">
-          <img src="../assets/mobleImg/tuiter.png" alt="" class="mobile_bottom_us_box_img">
+          <div @click="toTiwter">
+            <img src="../assets/mobleImg/tuiter.png" alt="" class="mobile_bottom_us_box_img">
+          </div>
           <img src="../assets/mobleImg/github@2x.png" alt="" class="mobile_bottom_us_box_img">
           <img src="../assets/mobleImg/telegram@2x.png" alt="" class="mobile_bottom_us_box_img">
           <img src="../assets/mobleImg/discord@2x.png" alt="" class="mobile_bottom_us_box_img">
@@ -212,7 +214,7 @@ export default {
     copy() {
       const input = document.createElement('input')
       document.body.appendChild(input)
-      input.setAttribute('value', document.getElementById(this.id).innerText)
+      input.setAttribute('value', this.url)
       input.select()
       if (document.execCommand('copy')) {
         ElMessage({
@@ -246,6 +248,9 @@ export default {
     },
     toTopFun() {
       document.documentElement.scrollTop = 0
+    },
+    toTiwter() {
+      window.location.href = "https://twitter.com/DmasterDID"
     },
   },
 }
@@ -304,7 +309,6 @@ export default {
 .mobile_main_title {
   margin-top: 0.38rem;
   font-size: 0.55rem;
-  font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #ffffff;
   word-break: break-all;
@@ -509,7 +513,6 @@ export default {
 
 .mobile_data_features_item_title {
   font-size: 0.4rem;
-  font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #202842;
   line-height: 0.6rem;
@@ -538,12 +541,12 @@ export default {
   width: 50%;
   height: 100%;
   background: #1672f0;
-  filter: blur(30px);
+  filter: blur(0.3rem);
 }
 
 .mobile_data_bottom_item_right {
   background: #73eaeb;
-  filter: blur(30px);
+  filter: blur(0.3rem);
 }
 
 .mobile_architecture {
@@ -591,7 +594,6 @@ export default {
 }
 .mobile_roadmap_title {
   font-size: 0.68rem;
-  font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #ffffff;
   text-align: center;
@@ -778,7 +780,8 @@ export default {
   left: 0;
   right: 0;
   background: rgba(32, 40, 66, 0.8);
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(0.1rem);
+  backdrop-filter: blur(0.1rem);
 }
 
 .mobile_mask_body {
@@ -835,7 +838,6 @@ export default {
   background: #1e2844;
   border-radius: 0.4rem;
   font-size: 0.4rem;
-  font-family: Poppins-Bold, Poppins;
   font-weight: bold;
   color: #ffffff;
   padding-top: 0.4rem;
