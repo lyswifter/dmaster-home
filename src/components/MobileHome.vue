@@ -325,7 +325,6 @@ export default {
   background-size: contain;
   padding-left: 0.7rem;
   font-size: 0.4rem;
-  font-family: Poppins-SemiBold, Poppins;
   font-weight: 600;
   color: #ffffff;
   line-height: 2.08rem;
@@ -347,7 +346,6 @@ export default {
   text-align: center;
   line-height: 1rem;
   font-size: 0.32rem;
-  font-family: Poppins-Medium, Poppins;
   font-weight: 500;
   color: #ffffff;
   margin: 0 auto;
@@ -359,9 +357,7 @@ export default {
   height: 1rem;
   border-radius: 0.12rem;
   border: 0.02rem solid #3087ff;
-
   font-size: 0.32rem;
-  font-family: Poppins-Medium, Poppins;
   font-weight: 500;
   color: #3087ff;
   margin: 0 auto;
@@ -411,7 +407,6 @@ export default {
 .mobile_data_title_intruduce {
   margin-top: 0.2rem;
   font-size: 0.28rem;
-  font-family: Poppins-Medium, Poppins;
   font-weight: 500;
   color: #202842;
   display: flex;
@@ -430,7 +425,6 @@ export default {
   border-radius: 0.4rem;
   padding: 0.4rem;
   font-size: 0.24rem;
-  font-family: Poppins-Light, Poppins;
   font-weight: 300;
   color: rgba(32, 40, 66, 0.8);
   margin-top: 0.4rem;
@@ -438,7 +432,6 @@ export default {
 
 .mobile_data_web_title {
   font-size: 0.36rem;
-  font-family: Poppins-ExtraBold, Poppins;
   font-weight: 800;
   color: #202842;
   margin-bottom: 0.2rem;
@@ -456,7 +449,6 @@ export default {
 
 .mobile_data_vs {
   font-size: 0.32rem;
-  font-family: Poppins-Medium, Poppins;
   font-weight: 500;
   color: #202842;
   margin: 0.2rem;
@@ -520,7 +512,6 @@ export default {
 
 .mobile_data_features_item_intruduce {
   font-size: 0.26rem;
-  font-family: Poppins-Light, Poppins;
   font-weight: 300;
   color: rgba(32, 40, 66, 0.8);
   text-align: center;
@@ -688,7 +679,6 @@ export default {
   background: #1672f0;
   border-radius: 0.16rem;
   font-size: 0.32rem;
-  font-family: Poppins-Medium, Poppins;
   font-weight: 500;
   color: #ffffff;
   text-align: center;
@@ -699,7 +689,6 @@ export default {
 .mobile_bottom_us {
   margin-top: 0.8rem;
   font-size: 0.4rem;
-  font-family: Poppins-Medium, Poppins;
   font-weight: 500;
   color: #222840;
 }
@@ -805,7 +794,6 @@ export default {
   background: #1672f0;
   border-radius: 0.5rem;
   font-size: 0.32rem;
-  font-family: Poppins-Medium, Poppins;
   font-weight: 500;
   color: #ffffff;
   text-align: center;
@@ -849,7 +837,6 @@ export default {
 
 .mobile_notice_mask_img_intruduce {
   font-size: 0.28rem;
-  font-family: Poppins-Medium, Poppins;
   font-weight: 500;
   color: #ffffff;
   margin-top: 0.2rem;
@@ -862,7 +849,6 @@ export default {
 
 .mobile_notice_mask_url {
   font-size: 0.28rem;
-  font-family: Poppins-Medium, Poppins;
   font-weight: 500;
   color: #202842;
   margin-top: 0.8rem;
@@ -871,7 +857,6 @@ export default {
 
 .mobile_notice_mask_copy {
   font-size: 0.28rem;
-  font-family: Poppins-Medium, Poppins;
   font-weight: 500;
   color: #1672f0;
   margin-top: 0.4rem;
