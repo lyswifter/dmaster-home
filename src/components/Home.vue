@@ -28,16 +28,27 @@ export default defineComponent({
     reloadPage() {
       location.reload();
     },
+
     handleSelect(key: string, keyPath: string[]) {
       console.log(key, keyPath);
     },
+
     scrollIntoView(aim: string) {
       document.querySelector(aim)?.scrollIntoView({
         behavior: "smooth",
       });
     },
+
     subcribeAction() {
       alert("subscribe");
+    },
+
+    showPolicyView() {
+      this.$router.push({ name: "policy" })
+    },
+
+    showTermOfService() {
+      this.$router.push({ name: "tos" })
     },
   },
 });
@@ -296,8 +307,10 @@ export default defineComponent({
             <div class="footer-footer-center">
               <span>Copyright © 2022 Dmaster All rights reserved.</span>
               <div class="footer-footer-center-bold">
-                <span>Privacy Policy</span>
-                <span style="margin-left:10px">Terms of Service</span>
+                <a href="javascript:void(0)" @click="showPolicyView"><span style="color: #222840">Privacy Policy</span></a>
+                <!-- <span>Privacy Policy</span> -->
+                <a href="javascript:void(0)" @click="showTermOfService"><span style="color: #222840;margin-left:10px">Terms of Service</span></a>
+                <!-- <span style="margin-left:10px">Terms of Service</span> -->
               </div>
             </div>
             <div>
