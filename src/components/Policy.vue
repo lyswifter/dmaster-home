@@ -21,8 +21,8 @@ export default defineComponent({
 
 <template>
   <div id="container">
-    <div class="title-view">Dmaster Terms of service</div>
-    <div class="version-view">Last modified: January 1, 2023(archived versions)</div>
+    <div class="title-view">PRIVACY POLICY</div>
+    <div class="version-view">Effective: January 1st, 2023</div>
 
     <div class="content-view mtop-20">
       <div>This Privacy Policy explains how we collect, use, store, protect, and share your personal information through
