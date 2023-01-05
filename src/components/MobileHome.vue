@@ -3,7 +3,8 @@
     <div class="mobile_mune">
       <div class="mobile_mune_menulog"></div>
       <img src="../assets/mobleImg/logo_Dmaster@2x.png" alt="" @click="toTopFun" class="mobile_mune_log">
-      <img src="../assets/mobleImg/icon_menu@2x.png" alt="" @click="openFun" class="mobile_mune_menulog" v-if="!isShowMask" />
+      <img src="../assets/mobleImg/icon_menu@2x.png" alt="" @click="openFun" class="mobile_mune_menulog"
+        v-if="!isShowMask" />
       <img src="../assets/mobleImg/icon_menuclose@2x.png" alt="" @click="closeFun" class="mobile_mune_menulog" v-else />
     </div>
     <div class="mobile_head">
@@ -31,13 +32,15 @@
       </div>
       <div class="mobile_data_web">
         <div class="mobile_data_web_title">Web2</div>
-        <span class="mobile_data_web_intruduce">Nowadays, your data is in cloud service of Web2 giants and you never own.</span>
+        <span class="mobile_data_web_intruduce">Nowadays, your data is in cloud service of Web2 giants and you never
+          own.</span>
       </div>
       <img src="../assets/mobleImg/web2@2x.png" alt="" class="mobile_data_medio">
       <div class="mobile_data_vs">VS</div>
       <div class="mobile_data_web">
         <div class="mobile_data_web_title mobile_data_web_title1">Web3</div>
-        <span class="mobile_data_web_intruduce">With Dmaster, your data is in your local device or being encryped on-chain without third-party unauthentic
+        <span class="mobile_data_web_intruduce">With Dmaster, your data is in your local device or being encryped
+          on-chain without third-party unauthentic
           access.</span>
       </div>
       <img src="../assets/mobleImg/web3@2x.png" alt="" class="mobile_data_web3">
@@ -139,8 +142,12 @@
       <div class="mobile_bottom_author">
         <span>Copyright © 2022 Dmaster All rights reserved.</span>
         <div class="mobile_bottom_author_div">
-          <span style="margin-right: 0.2rem;">Privacy Policy</span>
-          <span>Terms of Service</span>
+          <a href="javascript:void(0)" @click="showPolicyView"><span
+              style="color: #222840;margin-right: 0.2rem;">Privacy Policy</span></a>
+          <a href="javascript:void(0)" @click="showTermOfService"><span style="color: #222840;">Terms of
+              Service</span></a>
+          <!-- <span style="margin-right: 0.2rem;">Privacy Policy</span> -->
+          <!-- <span>Terms of Service</span> -->
         </div>
       </div>
     </div>
@@ -174,8 +181,8 @@
     </div>
   </div>
 </template>
-  
-  <script>
+
+<script>
 import { ElMessage } from "element-plus";
 import Typed from "typed.js";
 export default {
@@ -252,11 +259,18 @@ export default {
     toTiwter() {
       window.location.href = "https://twitter.com/DmasterDID"
     },
+    showPolicyView() {
+      this.$router.push({ name: "policy" })
+    },
+
+    showTermOfService() {
+      this.$router.push({ name: "tos" })
+    },
   },
 }
-  </script>
-  
-  <style scoped>
+</script>
+
+<style scoped>
 .mobileApp {
   width: 100%;
 }
@@ -416,7 +430,7 @@ export default {
 }
 
 /* .mobile_data_title_intruduce span {
-  line-height: 0.42rem;
+line-height: 0.42rem;
 } */
 
 .mobile_data_web {
@@ -436,11 +450,13 @@ export default {
   color: #202842;
   margin-bottom: 0.2rem;
 }
+
 .mobile_data_web_intruduce {
   font-weight: 400;
   color: rgba(32, 40, 66, 0.8);
   line-height: 0.36rem;
 }
+
 .mobile_data_medio {
   width: 100%;
   height: 2.34rem;
@@ -574,6 +590,7 @@ export default {
   padding-top: 80px;
   position: relative;
 }
+
 .mobile_roadmap_position {
   position: absolute;
   background: #ffffff;
@@ -583,6 +600,7 @@ export default {
   left: 0;
   top: 0;
 }
+
 .mobile_roadmap_title {
   font-size: 0.68rem;
   font-weight: bold;
@@ -875,4 +893,3 @@ export default {
   height: 100%;
 }
 </style>
-  
