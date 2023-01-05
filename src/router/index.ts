@@ -2,8 +2,8 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 
 import Home from "../components/Home.vue"
 import MobileHome from "../components/MobileHome.vue"
+import TosView from "../components/Toss.vue"
 import PolicyView from "../components/Policy.vue"
-import TosView from "../components/Tos.vue"
 
 const routes = [
     {

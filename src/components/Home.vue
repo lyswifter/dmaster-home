@@ -308,9 +308,7 @@ export default defineComponent({
               <span>Copyright © 2022 Dmaster All rights reserved.</span>
               <div class="footer-footer-center-bold">
                 <a href="javascript:void(0)" @click="showPolicyView"><span style="color: #222840">Privacy Policy</span></a>
-                <!-- <span>Privacy Policy</span> -->
                 <a href="javascript:void(0)" @click="showTermOfService"><span style="color: #222840;margin-left:10px">Terms of Service</span></a>
-                <!-- <span style="margin-left:10px">Terms of Service</span> -->
               </div>
             </div>
             <div>
